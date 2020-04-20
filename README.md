@@ -1,3 +1,3 @@
-# Coder Academy Text Adventure
+# Coding Bootcamp Text Adventure
 
 first commit

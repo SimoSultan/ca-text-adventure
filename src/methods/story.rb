@@ -6,7 +6,7 @@ def intro()
     system "clear"
     puts "*" * $terminal_width
     puts ""
-    puts "Welcome to Your Coder Academy Journey"
+    puts "Welcome to Your Coding Bootcamp Journey"
     puts ""
     puts "*" * $terminal_width
     puts ""
