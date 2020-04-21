@@ -1,6 +1,13 @@
 require 'tty-prompt'
-require_relative 'story'
-require_relative 'player'
+
+require_relative 'view'
+require_relative 'services'
+require_relative '../classes/CodingPractice'
+require_relative '../classes/ExtraActivities'
+require_relative '../classes/Hurdles'
+require_relative '../classes/PersonalBranding'
+require_relative '../classes/sub-classes'
+
 
 def main()
 
