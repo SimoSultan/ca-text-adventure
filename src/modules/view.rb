@@ -45,7 +45,7 @@ module View
 
 
     # this is the countdown that they will see when they are completing their extra activity
-    def countdown_timer(time)
+    def display_countdown_timer(time)
         system "clear"
         (0..time).reverse_each do |i|
             i == 1 ? (puts "#{i}!"): i == 0 ?(puts "Time is up!!!!") : (puts "#{i}")
