@@ -3,14 +3,9 @@ require 'io/console'
 $terminal_width = IO.console.winsize[1] ## this gets the width of the terminal
 
 
+
+# this module will handle the UI
 module View
-
-
-
-
-
-    # HEADER MESSAGES
-
 
 
     # display the header that will sit at the top of the screen in the main menu
@@ -48,11 +43,6 @@ module View
     end
 
 
-
-    
-
-
-
     # this is the countdown that they will see when they are completing their extra activity
     def countdown_timer(time)
         system "clear"
@@ -62,10 +52,5 @@ module View
             system "clear"
         end
     end
-
-
-
-    
-
 end
 

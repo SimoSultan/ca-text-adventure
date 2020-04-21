@@ -1,4 +1,3 @@
-# require 'tty-prompt'
 
 require_relative 'view'
 require_relative 'services'
@@ -10,30 +9,35 @@ require_relative '../classes/Challenges'
 require_relative '../classes/PersonalBranding'
 require_relative '../classes/sub_classes'
 
+include View, Services
+
 
 def main()
 
-    player = Player.new()
-    puts player, player.name, player.exp
-
-    game = Game.new(player)
+    system "clear"
+    display_header_main()
+    
+    game = Game.new()
+    player_info = get_player_info(game.exp_levels)
+    player = Player.new(player_info[:name], player_info[:exp])
 
     play = true
+
     while @play
 
         display_header_main()
 
-        player = player.get_player_info()
-        welcome_player()
-
+        #start first challenge
         challenge1 = Challenges.new()
         player.show_player_exp()
         follow_up_after_challenge()
 
+        #start second challenge
         challenge2 = Challenges.new()
         player.show_player_exp()
         follow_up_after_challenge()
-
+        
+        #start third challenge
         challenge3 = Challenges.new()
         player.show_player_exp()
         follow_up_after_challenge()
