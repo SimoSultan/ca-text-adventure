@@ -1,34 +1,41 @@
-# class Player
+require "tty-prompt"
 
-#     attr_reader :name
-#     attr_accessor :exp
+class Player
 
-#     def initialize name, exp
-#         @name = name
-#         @exp = exp
-#     end
-# end
-"What would you say your experience level?"
+    attr_accessor :name, :exp
 
-require 'tty-prompt'
+    def initialize(name = false, exp = 0, exp_levels)
+        @user_name = name
+        @user_exp = exp
+        @exp_levels = exp_levels
+        @player = {name: @user_name, exp: @exp}
+    end
 
 
-def get_player_info()
-    prompt = TTY::Prompt.new
+    # get players name
+    # get players chosen exp level to start out at
+    # as of 200421 - the only difference is that the play starts out at a higher level of EXP, 
+    #               - would like to be able to make the game harder for player with higher level in future
+    def get_player_info()
+        prompt = TTY::Prompt.new
+        puts "Before we start, what is your coder name?"
+        print "=> "; @user_name = gets.strip
+        puts ""
+        puts "Hello there #{@user_name}"
+        puts ""
+        @user_exp = prompt.select("What level of coder do you wish to start out as?", @exp_levels)
     
-    exp_levels = {
-        'Master' => 100,
-        'Advanced' => 20,
-        'Beginner' => 5,
-        'Noob' => 0,
-    }
+        return @player
+    end
 
-    puts "Before we start, what is your coder name?"
-    print "=> "; user_name = gets.strip
-    puts ""
-    puts "Hello there #{user_name}"
-    puts ""
-    user_exp = prompt.select("Choose your destiny?", exp_levels)
 
-    return player = {name: user_name, exp: user_exp}
+    def show_player_exp()
+        # if $exp >= 80
+        #     puts "Great you are skilled enough. Now go apply for a job!"
+        #     return quit = true
+        # else
+    end
 end
+
+
+

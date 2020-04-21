@@ -1,50 +1,49 @@
-require_relative "ExtraActivities"
 require_relative "PersonalBranding"
 require_relative "CodingPractice"
 
-class Twitter
-    def initialization
-        
+class Twitter < PersonalBranding < ExtraActivities
+    def initialize()
+        super
     end
 end
 
-class Medium
-    def initialization
+class Medium < PersonalBranding < ExtraActivities
+    def initialize()
     end
 end
 
-class YouTube
-    def initialization
+class YouTube < PersonalBranding < ExtraActivities
+    def initialize()
     end
 end
 
-class Codewars
-    def initialization
+class Codewars < CodingPractice < ExtraActivities
+    def initialize()
     end
 end
 
-class HackerRank
-    def initialization
+class HackerRank < CodingPractice < ExtraActivities
+    def initialize()
     end
 end
 
-class Excercism
-    def initialization
+class Excercism < CodingPractice < ExtraActivities
+    def initialize()
     end
 end
 
-class RegexCrossword
-    def initialization
+class RegexCrossword < CodingPractice < ExtraActivities
+    def initialize()
     end
 end
 
-class Hackathons
-    def initialization
+class Hackathons < PersonalBranding < ExtraActivities
+    def initialize()
     end
 end
 
-class Meetups
-    def initialization
+class Meetups < PersonalBranding < ExtraActivities
+    def initialize()
     end
 end
 

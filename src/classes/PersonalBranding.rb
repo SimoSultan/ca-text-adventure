@@ -1,6 +1,6 @@
 require_relative "ExtraActivities"
 
 class PersonalBranding < ExtraActivities
-    def initialization
+    def initialize()
     end
 end
