@@ -5,4 +5,8 @@ class ExtraActivities
     
     def initialize()
     end
+
+    def do_activity(type)
+        # this will invoke the a method from the respective class 'type'
+    end
 end
