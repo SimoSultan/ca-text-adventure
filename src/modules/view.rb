@@ -12,22 +12,23 @@ module View
     def display_header_main()
         system "clear"
         puts "*" * $terminal_width
-        puts ""
+        puts "THIS IS MAIN HEADER"
         puts "Welcome to Your Coding Bootcamp Journey"
-        puts ""
+        puts
         puts "*" * $terminal_width
-        puts ""
+        puts
     end
 
     # display the header that will sit at the top of the screen throughout the game
     def display_header_mini()
+        
         system "clear"
         puts "*" * $terminal_width
-        puts ""
+        puts "THIS IS MINI HEADER"
         puts "Welcome to Your Coding Bootcamp Journey"
-        puts ""
+        puts
         puts "*" * $terminal_width
-        puts ""
+        puts
     end
     
     # display the message that will be shown to user when the game finishes

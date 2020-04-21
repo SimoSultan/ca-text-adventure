@@ -61,9 +61,23 @@ module Services
 
 
 
-	def player_compared_themself()
+	def player_compared_themselves()
 	end
 
+
+
+	def does_player_want_to_continue()
+		puts "Do you want to play again? y/n"
+		print "=> "; play_again = gets.strip.downcase[0]
+		
+		if play_again == "y"
+			# player wants to play again
+			return true 
+		else
+			# player does NOT want to play again
+			return false
+		end
+	end
 
 	
 end 

@@ -13,15 +13,7 @@ class Game
     attr_accessor :exp_levels
 
     def initialize()
-
-        # @exp_levels = [
-        #     {name: 'Master', exp: 100,},
-        #     {name: 'Advanced', exp: 20,},
-        #     {name: 'Beginner', exp: 5,},
-        #     {name: 'Noob', exp: 0,},
-        # ]
-
-        
+       
         @exp_levels = {
             Master: 100,
             Advanced: 20,
