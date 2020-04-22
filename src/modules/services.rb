@@ -86,10 +86,14 @@ module Services
 		continue = true
 		while continue
 			catch_up_EXP = follow_up_extra_activities(follow_up_challenges)
-			$player.increase_exp(catch_up_EXP.exp_increase, 1)
+			if catch_up_EXP != 'next challenge'
+				$player.increase_exp(catch_up_EXP.exp_increase, 1)
+			end
 			display_header_mini()
 			$player.show_player_level()
-			return false if press_any_key_to_continue() == false
+
+
+			return if press_any_key_to_continue() == false
 		end
 	end
 

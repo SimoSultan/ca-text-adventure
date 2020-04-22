@@ -102,21 +102,25 @@ def main()
         display_header_mini()
         # ask if they want to do anything else before player starts next challenge
         follow_up3 = follow_up_extra_activities(game.follow_up_activities)
-        $player.increase_exp(follow_up3.exp_increase, 1)
+        # this is because they have chosen not to do any extra activities, so wont earn extra EXP
+        if follow_up3 != 'next challenge'
+            $player.increase_exp(follow_up3.exp_increase, 1)
+        end
 
         display_header_mini()
         $player.show_player_level()
 
 
         # check players EXP level
-        if $player.exp < game.game.exp_level_for_job
+        if $player.exp <= game.exp_level_for_job
             puts
-            puts "I'm sorry, you don't have enough EXP to graduate yet"
+            puts "I'm sorry, but you don't have enough EXP to graduate yet"
             puts "You will have to do some extra activities to raise your level"
             puts "Press any key to continue"
             gets
 
             extra_EXP = extra_follow_up_extra_activities(game.follow_up_activities)
+
         end
 
 
