@@ -27,7 +27,6 @@ class Game
 
         @follow_up_activities = {
             "Move on to next challenge" => 'next challenge',
-            # "See your current progress" => lambda {$player.show_player_level()},
             "Tweet about it" => lambda {Twitter.new()},
             "Do a HackerRank challenge" => lambda {HackerRank.new()},
             "Do a Codewars challenge" => lambda {Codewars.new()},

@@ -1,6 +1,5 @@
 require_relative "PersonalBranding"
 require_relative "CodingPractice"
-require_relative "Player"
 
 class Twitter < PersonalBranding
     @@tweets = 0
@@ -20,51 +19,158 @@ class Twitter < PersonalBranding
     end
 end
 
+
+
 class Medium < PersonalBranding
-    def initialize()
+    @@blogs = 0
+    @@medium_exp_earned = 0
+
+    attr_accessor :exp_increase
+
+    def initialize(countdown = 15)
+        super
+        puts "Great work on your blog"
+        @exp_increase = 10
+        @@blogs += 1
+    end
+
+    def self.display_total_blogs()
+        puts "Your total blogs = #{@@blogs}"
     end
 end
+
+
 
 class YouTube < PersonalBranding
-    def initialize()
+    @@videos = 0
+    @@youtube_exp_earned = 0
+
+    attr_accessor :exp_increase
+
+    def initialize(countdown = 30)
+        super
+        puts "Great work on your video"
+        @exp_increase = 20
+        @@videos += 1
+    end
+
+    def self.display_total_videos()
+        puts "Your total videos = #{@@videos}"
     end
 end
+
+
 
 class Codewars < CodingPractice
-    def initialize()
+    @@kyus = 0
+    @@codewars_exp_earned = 0
+
+    attr_accessor :exp_increase
+
+    def initialize(countdown = 7)
+        super
+        puts "Great work on your Kyu"
+        @exp_increase = 5
+        @@kyus += 1
+    end
+
+    def self.display_total_kyus()
+        puts "Your total kyus = #{@@kyus}"
     end
 end
+
+
 
 class HackerRank < CodingPractice
-    def initialize()
+    @@rank = 0
+    @@hackerrank_exp_earned = 0
+
+    attr_accessor :exp_increase
+
+    def initialize(countdown = 7)
+        super
+        puts "Great work on your rank"
+        @exp_increase = 5
+        @@rank += 1
+    end
+
+    def self.display_total_rank()
+        puts "Your total rank = #{@@rank}"
     end
 end
+
+
 
 class Excercism < CodingPractice
-    def initialize()
+    @@exercisms = 0
+    @@exercism_exp_earned = 0
+
+    attr_accessor :exp_increase
+
+    def initialize(countdown = 7)
+        super
+        puts "Great work on your exercism"
+        @exp_increase = 5
+        @@exercises += 1
+    end
+
+    def self.display_total_exercisms()
+        puts "Your total exercisms = #{@@exercisms}"
     end
 end
 
+
+
 class RegexCrossword < CodingPractice
-    def initialize()
+    @@crosswords = 0
+    @@regex_exp_earned = 0
+
+    attr_accessor :exp_increase
+
+    def initialize(countdown = 7)
+        super
+        puts "Great work on your crossword"
+        @exp_increase = 5
+        @@crosswords += 1
+    end
+
+    def self.display_total_crosswords()
+        puts "Your total crosswords = #{@@crosswords}"
     end
 end
 
 class Hackathons < PersonalBranding 
-    def initialize()
+    @@hackathons = 0
+    @@hackathon_exp_earned = 0
+
+    attr_accessor :exp_increase
+
+    def initialize(countdown = 30)
+        super
+        puts "Great work on your teamwork"
+        @exp_increase = 20
+        @@hackathons += 1
+    end
+
+    def self.display_total_hackathons()
+        puts "Your total hackathons = #{@@hackathons}"
     end
 end
 
 class Meetups < PersonalBranding
-    def initialize()
+    @@meetups = 0
+    @@meetup_exp_earned = 0
+
+    attr_accessor :exp_increase
+
+    def initialize(countdown = 20)
+        super
+        puts "Great work on your attendance"
+        @exp_increase = 20
+        @@meetups += 1
+    end
+
+    def self.display_total_meetups()
+        puts "Your total meetups = #{@@meetups}"
     end
 end
-
-
-
-# tweet = Twitter.new()
-# tweet2 = Twitter.new()
-
-# Twitter.display_total_tweets()
-# PersonalBranding.display_total_brandings()
-# ExtraActivities.display_total_activities()
