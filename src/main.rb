@@ -39,14 +39,13 @@ def main()
 
 
         #start first challenge
-        # challenge1 = Challenges.new(player.exp)
-        # exp_gained1 = challenge1.start_challenge()
-        # player.increase_exp(exp_gained1)
-        # player.update_challenge_count(1)
-        # player.show_player_level()
-
-        # continue = press_any_key_to_continue()
-        # return play = false if continue == false
+        chg1 = Challenges.new()
+        play = chg.start_challenge()
+        return play if play == false
+        total_chg_exp_earnt = chg.total_exp
+        puts "total exp earnt from chg = #{total_chg_exp_earnt}"
+        $player.increase_exp(total_chg_exp_earnt, 3)
+        $player.show_player_level()
         
         follow_up1 = follow_up_after_challenge(game.follow_up_activities)
 
@@ -67,9 +66,6 @@ def main()
         # player.update_challenge_count(1)
         # player.show_player_level()
 
-        # continue = press_any_key_to_continue()
-        # return play = false if continue == false
-
         # # follow_up2 = ExtraActivities.new()
         # # exp_follow2 = follow_up2.follow_up_after_challenge()
         # player.increase_exp(exp_follow2)
@@ -85,8 +81,6 @@ def main()
         # player.update_challenge_count(1)
         # player.show_player_level()
 
-        # continue = press_any_key_to_continue()
-        # return play = false if continue == false
        
         # # follow_up3 = follow_up_after_challenge()
         # player.increase_exp(exp_follow3)

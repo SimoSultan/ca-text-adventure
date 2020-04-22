@@ -35,6 +35,9 @@ class Player
         @player_completed_challenges += amount
     end
 
+    def player_compared_themselves()
+	end
+
 
 end
 

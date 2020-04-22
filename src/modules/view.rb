@@ -30,6 +30,17 @@ module View
         puts "*" * $terminal_width
         puts
     end
+
+    # display the header that will sit at the top of the screen throughout the game
+    def display_header_msg_under_mini(message)
+
+        return if message == ""
+    
+        puts "#{message}"
+        puts
+        puts "*" * $terminal_width
+        puts
+    end
     
     # display the message that will be shown to user when the game finishes
     def display_outro(condition)

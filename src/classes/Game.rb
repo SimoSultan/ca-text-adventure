@@ -36,7 +36,7 @@ class Game
             "Make a YouTube video" => lambda {YouTube.new()},
             "Attend a Meetup" => lambda {Meetup.new()},
             "Attend a Hackathon" => lambda {Hackathon.new()},
-            "Quit Game" => lambda {Hackathon.new()},
+            "Quit Game" => lambda {game_over()},
         }
         
     end

@@ -1,7 +1,7 @@
 require 'tty-prompt'
 require_relative "view"
 include View
-# require_relative "./classes/Player"
+
 
 # this module will handle UX
 module Services
@@ -25,12 +25,13 @@ module Services
 		print "=> "; resp = gets.strip
 		
 		if resp == "y"
-			player_info = {name: user_name, level: exp_levels.key(user_exp), exp: user_exp}
-		else
-			get_player_info()
+			# set the player info into a hash to send into the player class when we return out of this method
+			return player_info = {name: user_name, level: exp_levels.key(user_exp), exp: user_exp}
 		end
 
-		return player_info
+		# call the method again if it wasn't a yes
+		get_player_info()
+
     end
 
 
@@ -64,8 +65,7 @@ module Services
 
 
 
-	def player_compared_themselves()
-	end
+
 
 
 	# offering players if they want to work on their level/grind before their next challenge
@@ -73,7 +73,7 @@ module Services
 	def follow_up_after_challenge(follow_up_challenges)
         prompt = TTY::Prompt.new
 		puts "Great work on the challenge"
-		choice = prompt.select("What do you want to do now?", follow_up_challenges, cycle: true)
+		choice = prompt.select("What do you want to do now?", follow_up_challenges, cycle: true, per_page: 11)
 	end
 
 
@@ -90,6 +90,7 @@ module Services
 
 
 	def is_player_experienced_enough_yet(player, game)
+		# getting the experience level of each rank
 		master = game.exp_levels["Master"]
 		advanced = game.exp_levels["Advanced"]
 		beginner = game.exp_levels["Beginner"]
@@ -97,12 +98,14 @@ module Services
 
 
 		if player.level == "Master"
-			puts "What are you doing here at a bootcamp, you've already mastered all the languages."
+			# when they choose master, this is User Story 4, it's supposed to be a joke that they don't need to be at a bootcamp and are offered to restart the game
+			puts "What are you doing here at a bootcamp, you've already mastered all the languages"
 			play_again = does_player_want_to_continue()
 			return 'no' if play_again == false
 		end
 
 		if player.exp > game.exp_level_for_job && player.exp < game.exp_level_for_job_offer
+			# this is when the person has enough exp to apply for a job, but still not high enough to be offered a job
 			player.show_player_level()
 			puts "Well done you have finished the game"
 			puts "You are ready for prime time and can start applying for jobs"
@@ -110,6 +113,7 @@ module Services
 			return 'no' if play_again == false
 		
 		elsif player.exp > game.exp_level_for_job_offer
+			# this is when the person has enough to be offered a job
 			puts "Woah you're awesome, you've got a job offer already!"
 			puts "Well done you have finished the game"
 			play_again = does_player_want_to_continue()
@@ -123,6 +127,7 @@ module Services
 
 
 	def does_player_want_to_continue()
+		# ask user if they want to restart the game
 		puts "Do you want to play again? y/n"
 		print "=> "; play_again = gets.strip.downcase[0]
 		
