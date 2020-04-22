@@ -59,9 +59,19 @@ module View
     def display_countdown_timer(time)
         system "clear"
         (0..time).reverse_each do |i|
-            i == 1 ? (puts "#{i}!"): i == 0 ?(puts "Time is up!!!!") : (puts "#{i}")
+
+            display_header_mini()
+            puts 
+            if i == 1 
+                puts "#{i}!"
+            elsif i == 0 
+                puts "Time is up!!!!"
+            else 
+                puts "#{i}"
+            end
+
             sleep 1
-            system "clear"
+
         end
     end
 end

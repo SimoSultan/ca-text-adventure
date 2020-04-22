@@ -7,7 +7,7 @@ class CodingPractice < ExtraActivities
     
     def initialize(countdown)
         super
-        puts "Great work on doing a coding practice"
+        puts "Great work. You just increased your coding skills"
         @@total_practices += 1
     end
 

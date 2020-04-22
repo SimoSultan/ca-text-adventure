@@ -11,6 +11,7 @@
 class Game
 
     attr_reader :exp_levels, :follow_up_activities, :exp_level_for_job, :exp_level_for_job_offer
+    attr_accessor :questions
 
     def initialize()
 
@@ -37,6 +38,42 @@ class Game
             "Attend a Meetup" => lambda {Meetup.new()},
             "Attend a Hackathon" => lambda {Hackathon.new()},
             "Quit Game" => lambda {game_over()},
+        }
+
+        @questions = {
+            q1: {
+                "1" => 1,
+                "2" => 2,
+                "3" => 3,
+                "Ask for help" => "ask",
+                "Don't know. Move on" => "dont",
+                "I give up" => "give",
+                "Question" => "What is 1 + 1?",
+                "Hint" => "Count with your fingers",
+                "Answer" => 2,
+            },
+            q2: {
+                "3" => 3,
+                "4" => 4,
+                "5" => 5,
+                "Ask for help" => "ask",
+                "Don't know. Move on" => "dont",
+                "I give up" => "give",
+                "Question" => "What is 2 + 2?",
+                "Hint" => "Count with your fingers",
+                "Answer" => 4,
+            },
+            q3: {
+                "5" => 5,
+                "6" => 6,
+                "7" => 7,
+                "Ask for help" => "ask",
+                "Don't know. Move on" => "dont",
+                "I give up" => "give",
+                "Question" => "What is 3 + 3?",
+                "Hint" => "Count with your fingers",
+                "Answer" => 6,
+            }
         }
         
     end

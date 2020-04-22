@@ -7,7 +7,7 @@ class PersonalBranding < ExtraActivities
     
     def initialize(countdown)
         super
-        puts "Great work on increasing your personal branding"
+        puts "Great work! You just increase you personal branding"
         @@total_brandings += 1
     end
 

@@ -3,80 +3,35 @@ require_relative "../modules/services"
 require_relative "../modules/view"
 include Services, View
 
-follow_up_activities = {
-    "Oh wait I get it" => 'next challenge',
-    # "See your current progress" => lambda {$player.show_player_level()},
-    "Tweet about it" => lambda {Twitter.new()},
-    "Do a HackerRank challenge" => lambda {HackerRank.new()},
-    "Do a Codewars challenge" => lambda {Codewars.new()},
-    "Do a Excercism challenge" => lambda {Excercism.new()},
-    "Do a RegexCrossword challenge" => lambda {RegexCrossword.new()},
-    "Write a Medium blog" => lambda {Medium.new()},
-    "Make a YouTube video" => lambda {YouTube.new()},
-    "Attend a Meetup" => lambda {Meetup.new()},
-    "Attend a Hackathon" => lambda {Hackathon.new()},
-    "Quit Game" => lambda {Hackathon.new()},
-}
-
-
-$questions = {
-    q1: {
-        "1" => 1,
-        "2" => 2,
-        "3" => 3,
-        "Ask for help" => "ask",
-        "Don't know. Move on" => "dont",
-        "I give up" => "give",
-        "Question" => "What is 1 + 1?",
-        "Hint" => "Count with your fingers",
-        "Answer" => 2,
-    },
-    q2: {
-        "3" => 3,
-        "4" => 4,
-        "5" => 5,
-        "Ask for help" => "ask",
-        "Don't know. Move on" => "dont",
-        "I give up" => "give",
-        "Question" => "What is 2 + 2?",
-        "Hint" => "Count with your fingers",
-        "Answer" => 4,
-    },
-    q3: {
-        "5" => 5,
-        "6" => 6,
-        "7" => 7,
-        "Ask for help" => "ask",
-        "Don't know. Move on" => "dont",
-        "I give up" => "give",
-        "Question" => "What is 3 + 3?",
-        "Hint" => "Count with your fingers",
-        "Answer" => 6,
-    }
-}
 
 class Challenges
 
     attr_accessor :help_exp, :correct_ans_exp, :persistence_exp, :total_exp
 
-    # def initialize(player, game)
-    def initialize()
+    def initialize(questions)
         # @starting_exp = player.exp
+        @questions = questions
         @help_exp = 0
         @correct_ans_exp = 0
         @persistence_exp = 0
         @total_exp = 0
         @message = "You only get one try per question, so take your time"
+        display_header_mini()
+
     end
 
     def update_chg_total_exp()
         @total_exp += @help_exp + @persistence_exp + @correct_ans_exp
     end
 
-    def self.get_ans(question_symbol)
+
+
+    def get_ans(question_symbol)
         #question_number is a symbol here
-        return $questions[question_symbol]["Answer"]
+        return @questions[question_symbol]["Answer"]
     end
+
+
 
     def start_challenge()
         display_header_mini()
@@ -109,12 +64,12 @@ class Challenges
     def ask_question(question_symbol)
         display_header_mini()
         display_header_msg_under_mini(@message)
-        question = $questions[question_symbol] # => this is the object with answers in them
+        question = @questions[question_symbol] # => this is the object with answers in them
         # create prompt
         # get the answer to the question
         # display question and possible solutions
         prompt = TTY::Prompt.new
-        ans = Challenges.get_ans(question_symbol)
+        ans = get_ans(question_symbol)
         user_resp = prompt.select(question["Question"]) do |q|
              q.help '(Remember: You only get one shot at it!)'
              q.choice question.keys[0], question.values[0]
@@ -141,6 +96,10 @@ class Challenges
             # call help function
             # this will return either an exp increase, or the hint from the question
             help = ask_for_help(question)
+
+            # this will send false out to stop the 'play' variable in start_challenge() to stop the game
+            return false if help == false
+
             # check what was returned
             # either display the message and restart the question
             # or add their exp
@@ -156,10 +115,10 @@ class Challenges
                 @help_exp += help
             end
             puts
-            puts "Ok I'm going to restart the question for you now"
-            puts "Your hint will display at the top"
+            puts "Ok we're going to give you another go and your hint will display at the top"
             puts "Press any key to continue"
             gets 
+
             ask_question(question_symbol)
 
         when ans
@@ -186,15 +145,20 @@ class Challenges
         # give them time to go and google a solution
         prompt = TTY::Prompt.new
         google = prompt.select('Did you find out how to solve it by Googling it?') do |menu|
-            menu.choice "yes", true
-            menu.choice "no    (You're lucky this time, I will give you a hint)", false
+            menu.choice "yes", 'yes'
+            menu.choice "no    (You're lucky this time, I will give you a hint)", 'no'
             menu.choice "I give up. I don't know how to solve it", lambda {give_up()}
         end
 
-        return give_hint(question) if google == false
-        return 1 if google == true
+        # this is the EXP they get if they managed to find the solution on google
+        return false if google == false
+        # this will return a string that is set into @message to display at top for next loop
+        return give_hint(question) if google == 'no'
+        # this is the EXP they get if they managed to find the solution on google
+        return 1 if google == 'yes'
     end
 
+    # this accesses the hint in the question
     def give_hint(question)
         question["Hint"]
     end

@@ -16,7 +16,7 @@ class Player
     # shows player their experience level on the main screen
     def show_player_level()
         puts "#{@name}, your current EXP = #{@exp}"
-        puts "You've also completed #{@player_completed_challenges} challenge/s"
+        puts "You've also completed #{@player_completed_challenges} challenge/s so far"
         # return true
     end
 

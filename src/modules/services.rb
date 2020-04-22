@@ -49,20 +49,24 @@ module Services
 	# display a give up message, wait some time to let it sink in
 	# then end the game
 	def give_up()
+        display_header_mini()
 		display_outro('give up')
-		wait(2)
-		game_over()
-	end
-
-
-	# when the user wants to end the game
-	# stops the loop and displays a message to player
-	def game_over()
 		display_outro('game over')
 		wait(2)
 		return false
 	end
 
+
+
+
+	# when the user wants to end the game
+	# stops the loop and displays a message to player
+	def game_over()
+        display_header_mini()
+		display_outro('game over')
+		wait(2)
+		return false
+	end
 
 
 
@@ -81,11 +85,10 @@ module Services
 
 	def press_any_key_to_continue()
 		# getting user to continue to next challenge or quit out the app
+		puts
 		puts "Press any key to continue... or [q]uit"
 		resp = gets.strip.downcase[0]
-		return 'no' if resp == "q"
-		system "clear"
-		display_header_mini()
+		return false if resp == "q"
 	end
 
 
