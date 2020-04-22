@@ -71,10 +71,9 @@ module Services
 
 
 
-
 	# offering players if they want to work on their level/grind before their next challenge
 	# they have list of options from sub_classes
-	def follow_up_after_challenge(follow_up_challenges)
+	def follow_up_extra_activities(follow_up_challenges)
 		display_header_mini()
 		display_header_msg_under_mini("Great work on the challenge questions")
         prompt = TTY::Prompt.new
@@ -82,9 +81,22 @@ module Services
 	end
 
 
+	def extra_follow_up_extra_activities(follow_up_challenges)
+		display_header_mini()
+		continue = true
+		while continue
+			catch_up_EXP = follow_up_extra_activities(follow_up_challenges)
+			$player.increase_exp(catch_up_EXP.exp_increase, 1)
+			display_header_mini()
+			$player.show_player_level()
+			return false if press_any_key_to_continue() == false
+		end
+	end
 
+
+
+	# getting user to continue to next challenge or quit out the app
 	def press_any_key_to_continue()
-		# getting user to continue to next challenge or quit out the app
 		puts
 		puts "Press any key to continue... or [q]uit"
 		resp = gets.strip.downcase[0]
@@ -93,52 +105,56 @@ module Services
 
 
 
+
+	# getting the experience level of each rank
 	def is_player_experienced_enough_yet(player, game)
-		# getting the experience level of each rank
 		master = game.exp_levels["Master"]
 		advanced = game.exp_levels["Advanced"]
 		beginner = game.exp_levels["Beginner"]
 		noob = game.exp_levels["Noob"]
 
 
+		# when they choose master, this is User Story 4, it's supposed to be a joke that they don't need to be at a bootcamp and are offered to restart the game
 		if player.level == "Master"
-			# when they choose master, this is User Story 4, it's supposed to be a joke that they don't need to be at a bootcamp and are offered to restart the game
 			puts "What are you doing here at a bootcamp, you've already mastered all the languages"
 			play_again = does_player_want_to_continue()
-			return 'no' if play_again == false
-		end
+			return play_again if play_again == false
 
-		if player.exp > game.exp_level_for_job && player.exp < game.exp_level_for_job_offer
-			# this is when the person has enough exp to apply for a job, but still not high enough to be offered a job
+		# when the person has enough exp to apply for a job, but still not high enough to be offered a job
+		elsif player.exp > game.exp_level_for_job && player.exp < game.exp_level_for_job_offer
 			player.show_player_level()
-			puts "Well done you have finished the game"
+			puts
+			puts "Well done. You have enough EXP to graduate"
 			puts "You are ready for prime time and can start applying for jobs"
+			puts "Go get 'em tiger!"
+
 			play_again = does_player_want_to_continue()
-			return 'no' if play_again == false
+			return play_again if play_again == false
 		
+		# when the person has enough to be offered a job
 		elsif player.exp > game.exp_level_for_job_offer
-			# this is when the person has enough to be offered a job
 			puts "Woah you're awesome, you've got a job offer already!"
 			puts "Well done you have finished the game"
+
 			play_again = does_player_want_to_continue()
-			return 'no' if play_again == false
-		else
-			play_again = true
+			return play_again if play_again == false
 		end
-		return play_again
+
+		# if conditions above aren't met, continue game
+		return play_again = true
 	end
 
 
 
+
+	# ask user if they want to restart the game		
 	def does_player_want_to_continue()
-		# ask user if they want to restart the game
+		puts
 		puts "Do you want to play again? y/n"
 		print "=> "; play_again = gets.strip.downcase[0]
 		
-		if play_again == "y"
-			# player wants to play again
-			return true 
-		end
+		# player wants to play again
+		return true if play_again == "y"
 
 		# player does NOT want to play again
 		return false

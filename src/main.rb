@@ -12,17 +12,18 @@ include View, Services
 
 def main()
 
+    # reset screen and show main  header with big logo
+    system "clear"
+    display_header_main()
+    # create a new game and player instance
+    game = Game.new()
+    player_info = get_player_info(game.exp_levels)
+    $player = Player.new(player_info[:name], player_info[:exp], player_info[:level])
+
     play = true
 
     while play
 
-        # reset screen and show main  header with big logo
-        system "clear"
-        display_header_main()
-        # create a new game and player instance
-        game = Game.new()
-        player_info = get_player_info(game.exp_levels)
-        $player = Player.new(player_info[:name], player_info[:exp], player_info[:level])
         # displays first header during the game
         display_header_mini()
         # this will determine if player has enough EXP to apply for a job or if they need to practice more
@@ -30,7 +31,7 @@ def main()
         # it will also keep playing 
         continue = is_player_experienced_enough_yet($player, game)
         # game_over will return false and display an outro message
-        return play = game_over() if continue == 'no'
+        return game_over() if continue == false
 
 
 
@@ -49,15 +50,15 @@ def main()
         # displays header again for any key to continue 
         display_header_mini()
         # ask if they want to do anything else before player starts next challenge
-        follow_up1 = follow_up_after_challenge(game.follow_up_activities)
-        # if follow_up1 != 'next challenge' && follow_up1 != true
+        follow_up1 = follow_up_extra_activities(game.follow_up_activities)
+        # this is because they have chosen not to do any extra activities, so wont earn extra EXP
         if follow_up1 != 'next challenge'
             $player.increase_exp(follow_up1.exp_increase, 1)
             $player.show_player_level()
         end
         # check user wants to continue
-        play = press_any_key_to_continue()
-        return play if play == false
+        return false if press_any_key_to_continue() == false
+
 
 
         ## STAGE 2 ## 
@@ -75,15 +76,14 @@ def main()
         # displays header again for any key to continue 
         display_header_mini()
         # ask if they want to do anything else before player starts next challenge
-        follow_up2 = follow_up_after_challenge(game.follow_up_activities)
-        # if follow_up1 != 'next challenge' && follow_up1 != true
+        follow_up2 = follow_up_extra_activities(game.follow_up_activities)
+        # this is because they have chosen not to do any extra activities, so wont earn extra EXP
         if follow_up2 != 'next challenge'
             $player.increase_exp(follow_up2.exp_increase, 1)
             $player.show_player_level()
         end
         # check user wants to continue
-        play = press_any_key_to_continue()
-        return play if play == false
+        return false if press_any_key_to_continue() == false
 
 
         ## STAGE 3 ## 
@@ -101,20 +101,28 @@ def main()
         # displays header again for any key to continue 
         display_header_mini()
         # ask if they want to do anything else before player starts next challenge
-        follow_up3 = follow_up_after_challenge(game.follow_up_activities)
-        # if follow_up1 != 'next challenge' && follow_up1 != true
-        if follow_up3 != 'next challenge'
-            $player.increase_exp(follow_up3.exp_increase, 1)
-            $player.show_player_level()
+        follow_up3 = follow_up_extra_activities(game.follow_up_activities)
+        $player.increase_exp(follow_up3.exp_increase, 1)
+
+        display_header_mini()
+        $player.show_player_level()
+
+
+        # check players EXP level
+        if $player.exp < game.game.exp_level_for_job
+            puts
+            puts "I'm sorry, you don't have enough EXP to graduate yet"
+            puts "You will have to do some extra activities to raise your level"
+            puts "Press any key to continue"
+            gets
+
+            extra_EXP = extra_follow_up_extra_activities(game.follow_up_activities)
         end
 
 
-        # $player.have_enough_EXP()
+        puts "WELL DONE! You have enough EXP"
+        
 
-        # # this will should return true or false depending on user input
-        # play = does_player_want_to_continue()
-
-        play = false
     end # of loop
 
 end # of main method
