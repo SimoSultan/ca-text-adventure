@@ -9,7 +9,7 @@ class ExtraActivities
     def initialize(countdown)
         @countdown_time = countdown
         display_countdown_timer(@countdown_time)
-        puts "Great work on doing an extra activity"
+        # puts "Great work on doing an extra activity"
         @@total_activities += 1
     end
 

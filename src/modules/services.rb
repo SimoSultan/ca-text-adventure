@@ -71,9 +71,10 @@ module Services
 	# offering players if they want to work on their level/grind before their next challenge
 	# they have list of options from sub_classes
 	def follow_up_after_challenge(follow_up_challenges)
+		display_header_mini()
+		display_header_msg_under_mini("Great work on the challenge questions")
         prompt = TTY::Prompt.new
-		puts "Great work on the challenge"
-		choice = prompt.select("What do you want to do now?", follow_up_challenges, cycle: true, per_page: 11)
+		choice = prompt.select("What do you want to do now?\n", follow_up_challenges, cycle: true, per_page: 11, help: '')
 	end
 
 

@@ -40,10 +40,12 @@ def main()
 
         #start first challenge
         chg1 = Challenges.new()
-        play = chg.start_challenge()
+        play = chg1.start_challenge()
         return play if play == false
-        total_chg_exp_earnt = chg.total_exp
+        total_chg_exp_earnt = chg1.total_exp
+        puts
         puts "total exp earnt from chg = #{total_chg_exp_earnt}"
+        puts
         $player.increase_exp(total_chg_exp_earnt, 3)
         $player.show_player_level()
         

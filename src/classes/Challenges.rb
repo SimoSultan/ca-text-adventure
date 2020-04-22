@@ -135,7 +135,7 @@ class Challenges
             return give_up()
 
         when "dont"
-            @message = "The answer was #{ans} \nNo exp was awarded"
+            @message = "The answer was #{ans}. No exp was awarded"
 
         when "ask"
             # call help function
@@ -148,7 +148,7 @@ class Challenges
             if exp == nil
                 #this will set the message var to display again when the question gets asked again
                 # because they didn't figure it out for themselves
-                @message = "Ok here's a hint for the question '#{help}"
+                @message = "My hint for you: '#{help}'"
             else
                 # otherwise they figured it with google and want to re-attempt the question
                 # they also get 1 point for doing the extra work themselves
@@ -156,19 +156,20 @@ class Challenges
                 @help_exp += help
             end
             puts
-            puts "Ok so we're going to restart the question for you now that you've figured it out"
+            puts "Ok I'm going to restart the question for you now"
+            puts "Your hint will display at the top"
             puts "Press any key to continue"
             gets 
             ask_question(question_symbol)
 
         when ans
             # if their answer is correct
-            @message = "Great work! You've got the correct answer"
+            @message = "Great work! Your answer was correct"
             @correct_ans_exp += 7
 
         else
             # their answer was incorrect
-            @message = "That was incorrect sorry\nThe answer was #{ans} \nNo exp was awarded"
+            @message = "That was incorrect sorry. The answer was #{ans}\nNo exp was awarded"
         end
     end
 
