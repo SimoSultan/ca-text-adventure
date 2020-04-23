@@ -1,4 +1,4 @@
-# require "tty-prompt"
+# require "colorize"
 require_relative "../modules/view"
 require_relative "../modules/services"
 include View, Services
@@ -23,11 +23,13 @@ class Player
     #               - would like to be able to make the game harder for player with higher level in future
 	def get_player_info()
         # prompt = TTY::Prompt.new
-        display_header_mini()
+        # this is stopping the game from running if users screen size is too small
+        return false if display_header_main() == false
 
 
-        puts "Before we start, what is your coder name?"
+        puts "Before we start, what is your coder name?".colorize(:light_green)
         print "=> "; user_name = gets.strip.capitalize
+        display_header_main()
         puts
         puts "Hi! #{user_name}"
 		# user_exp = prompt.select("What level of coder do you wish to start out as?", $game.exp_levels, cycle: true)
@@ -57,6 +59,7 @@ class Player
 
     # shows player their experience level on the main screen
     def show_player_level()
+        puts
         puts "#{@name}, your current EXP = #{@exp}"
         puts "You've also completed #{@player_completed_challenges} challenge/s so far"
         # return true

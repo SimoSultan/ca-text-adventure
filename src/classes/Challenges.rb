@@ -57,6 +57,7 @@ class Challenges
             # these make sure to ask new questions each loop
             # question_symbol = "q#{i}".to_sym
             # play = ask_question(question_symbol)
+            puts
             play = ask_question(q)
             # stop loop
             return play if play == false
@@ -84,7 +85,7 @@ class Challenges
         prompt = TTY::Prompt.new
         ans = get_ans(question_symbol)
         user_resp = prompt.select(question["Question"]) do |q|
-             q.help '(Remember: You only get one shot at it!)'
+             q.help 'Remember: You only get one shot!'
              q.choice question.keys[0], question.values[0]
              q.choice question.keys[1], question.values[1]
              q.choice question.keys[2], question.values[2]
@@ -127,11 +128,10 @@ class Challenges
                 # I think I will make this more points though
                 @help_exp += help
             end
-            puts
+            display_header_mini()
+            display_header_msg_under_mini(@message)
             puts "Ok we're going to give you another go and your hint will display at the top"
-            puts "Press any key to continue"
-            gets 
-
+            press_any_key()
             ask_question(question_symbol)
 
         when ans
@@ -157,10 +157,14 @@ class Challenges
 
         # give them time to go and google a solution
         prompt = TTY::Prompt.new
+        system "clear"
+        display_header_mini()
+        display_header_msg_under_mini(@message)
         google = prompt.select('Did you find out how to solve it by Googling it?') do |menu|
-            menu.choice "yes", 'yes'
-            menu.choice "no    (You're lucky this time, I will give you a hint)", 'no'
-            menu.choice "I give up. I don't know how to solve it", lambda {give_up()}
+            menu.help " "
+            menu.choice "Yes", 'yes'
+            menu.choice "I need a hint", 'no'
+            menu.choice "I give up", lambda {give_up()}
         end
 
         # this is the EXP they get if they managed to find the solution on google

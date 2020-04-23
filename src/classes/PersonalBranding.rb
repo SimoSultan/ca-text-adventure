@@ -1,13 +1,16 @@
 require_relative "ExtraActivities"
+require_relative "../modules/view"
+include View
 
 class PersonalBranding < ExtraActivities
 
     @@total_brandings = 0
-    @@tota_exp_branding = 0
+    @@total_exp_branding = 0
     
-    def initialize(countdown)
+    def initialize(countdown, header_message, time_up_message, exp)
         super
-        puts "Great work! You just increase you personal branding"
+        display_header_mini()
+        display_header_msg_under_mini("Great work! You just increased you personal branding #{$player.name}")
         @@total_brandings += 1
     end
 

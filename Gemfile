@@ -11,3 +11,5 @@ gem "tty-prompt", "~> 0.21.0"
 gem "colorize", "~> 0.8.1"
 
 gem "test-unit", "~> 3.3"
+
+gem "faker", "~> 2.11"

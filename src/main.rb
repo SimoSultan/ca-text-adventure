@@ -14,12 +14,14 @@ def main()
 
     # reset screen and show main  header with big logo
     system "clear"
-    display_header_main()
+    # display_header_main()
+    puts
     # create a new game and player instance
 
     $game = Game.new()
     $player = Player.new()
-    $player.get_player_info()
+    # stopping the game from running if screen size is too small
+    return if $player.get_player_info() == false
 
 
 
@@ -58,6 +60,8 @@ def main()
         # ask if they want to do anything else before player starts next challenge
         follow_up1 = follow_up_extra_activities()
         # this is because they have chosen not to do any extra activities, so wont earn extra EXP
+        # if they have completed an extra activity, there will be an exp gain on the variable
+        # and the 1 is the amount of extra activities they completed to add to their total challenge count on $player
         if follow_up1 != 'next challenge'
             $player.increase_exp(follow_up1.exp_increase, 1)
             $player.show_player_level()
@@ -84,6 +88,8 @@ def main()
         # ask if they want to do anything else before player starts next challenge
         follow_up2 = follow_up_extra_activities()
         # this is because they have chosen not to do any extra activities, so wont earn extra EXP
+        # if they have completed an extra activity, there will be an exp gain on the variable
+        # and the 1 is the amount of extra activities they completed to add to their total challenge count on $player
         if follow_up2 != 'next challenge'
             $player.increase_exp(follow_up2.exp_increase, 1)
             $player.show_player_level()
@@ -109,6 +115,8 @@ def main()
         # ask if they want to do anything else before player starts next challenge
         follow_up3 = follow_up_extra_activities()
         # this is because they have chosen not to do any extra activities, so wont earn extra EXP
+        # if they have completed an extra activity, there will be an exp gain on the variable
+        # and the 1 is the amount of extra activities they completed to add to their total challenge count on $player
         if follow_up3 != 'next challenge'
             $player.increase_exp(follow_up3.exp_increase, 1)
         end

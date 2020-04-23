@@ -5,9 +5,10 @@ class CodingPractice < ExtraActivities
     @@total_practices = 0
     @@total_exp_practice = 0
     
-    def initialize(countdown)
+    def initialize(countdown, header_message, time_up_message, exp)
         super
-        puts "Great work. You just increased your coding skills"
+        display_header_mini()
+        puts "Great work! You just increased your coding skills #{$player.name}"
         @@total_practices += 1
     end
 

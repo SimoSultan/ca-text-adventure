@@ -1,3 +1,4 @@
+require 'colorize'
 require 'tty-prompt'
 require_relative "view"
 include View
@@ -76,12 +77,12 @@ module Services
 	def follow_up_extra_activities()
 
 		display_header_mini()
-		display_header_msg_under_mini("Great work on the challenge questions")
+		display_header_msg_under_mini("Great work on the challenge questions\nEarn some extra EXP by taking some time on an extra activity")
 
 		follow_up_activities = $game.follow_up_activities
 		prompt = TTY::Prompt.new
 		
-		choice = prompt.select("What do you want to do now?\n", follow_up_activities, cycle: true, per_page: 11, help: '')
+		choice = prompt.select("How would you like to proceed?\n", follow_up_activities, cycle: true, per_page: 11, help: '')
 	end
 
 
@@ -111,9 +112,19 @@ module Services
 	# getting user to continue to next challenge or quit out the app
 	def press_any_key_to_continue(word, confirm)
 		puts
-		puts "Press any key to continue... or #{word}"
+		puts "Press any key to continue... or #{word}".colorize(:light_green)
 		resp = gets.strip.downcase[0]
 		return false if resp == confirm
+	end
+
+
+
+
+	def press_any_key()
+		puts
+		puts
+		puts "Press any key to continue...".colorize(:light_green)
+		gets 
 	end
 
 
@@ -122,7 +133,7 @@ module Services
 	# ask user if they want to restart the game		
 	def does_player_want_to_restart()
 		puts
-		puts "Do you want to play again? y/n"
+		puts "Do you want to play again? y/n".colorize(:light_green)
 		print "=> "; play_again = gets.strip.downcase[0]
 		
 		# player wants to play again
