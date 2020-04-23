@@ -77,7 +77,7 @@ module Services
 	def follow_up_extra_activities()
 
 		display_header_mini()
-		display_header_msg_under_mini("Great work on the challenge questions\nEarn some extra EXP by taking some time on an extra activity")
+		display_header_msg_under_mini("Great work on the challenge questions\nNow earn some extra EXP on an extra activity\nHint: The more time you put in, the more EXP you get")
 
 		follow_up_activities = $game.follow_up_activities
 		prompt = TTY::Prompt.new

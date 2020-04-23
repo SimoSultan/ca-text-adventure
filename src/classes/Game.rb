@@ -34,7 +34,7 @@ class Game
             "Do a Codewars challenge" => lambda {Codewars.new()},
             # "Do a Excercism challenge" => lambda {Excercism.new()},
             "Do a RegexCrossword challenge" => lambda {RegexCrossword.new()},
-            "Attend a Meetup" => lambda {Meetup.new()},
+            "Attend a Meetup" => lambda {Meetups.new()},
             "Attend a Hackathon" => lambda {Hackathon.new()},
             "Quit Game" => lambda {game_over()},
         }

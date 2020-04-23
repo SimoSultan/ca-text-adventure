@@ -65,6 +65,14 @@ class Player
         # return true
     end
 
+    # shows recent increase of EXP they just earnt
+    def show_exp_increase(exp_increase)
+        puts
+        puts "#{@name}, you just earnt #{exp_increase} EXP on that last challenge"
+        puts "And you've completed a total of #{@player_completed_challenges} challenge/s so far"
+        # return true
+    end
+
     def increase_exp(amount, challenge_count)
         @exp += amount
         increase_challenge_count(challenge_count) if challenge_count > 0

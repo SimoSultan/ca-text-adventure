@@ -26,6 +26,8 @@ GEM
       tty-screen (~> 0.7)
       wisper (~> 2.0.0)
     tty-screen (0.7.1)
+    tty-spinner (0.9.3)
+      tty-cursor (~> 0.7)
     wisper (2.0.1)
 
 PLATFORMS
@@ -36,6 +38,7 @@ DEPENDENCIES
   faker (~> 2.11)
   test-unit (~> 3.3)
   tty-prompt (~> 0.21.0)
+  tty-spinner (~> 0.9.3)
 
 BUNDLED WITH
    2.1.4

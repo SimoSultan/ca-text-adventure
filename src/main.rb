@@ -48,7 +48,7 @@ def main()
 
         # start first challenge
         chg1 = Challenges.new()
-        play = chg1.start_challenge()
+        play = chg1.start_challenge(1)
         # stop game loop if they gave up in the challenge
         return play if play == false
         # otherwise get their EXP from the challenge they just completed
@@ -62,9 +62,11 @@ def main()
         # this is because they have chosen not to do any extra activities, so wont earn extra EXP
         # if they have completed an extra activity, there will be an exp gain on the variable
         # and the 1 is the amount of extra activities they completed to add to their total challenge count on $player
+        display_header_mini()
         if follow_up1 != 'next challenge'
             $player.increase_exp(follow_up1.exp_increase, 1)
-            $player.show_player_level()
+            display_header_mini()
+            $player.show_exp_increase(follow_up1.exp_increase)
         end
         # check user wants to continue
         return false if press_any_key_to_continue("[q]uit", "q") == false
@@ -76,7 +78,7 @@ def main()
 
         # start second challenge
         chg2 = Challenges.new()
-        play = chg2.start_challenge()
+        play = chg2.start_challenge(2)
         # stop game loop if they gave up in the challenge
         return play if play == false
         # otherwise get their EXP from the challenge they just completed
@@ -92,6 +94,7 @@ def main()
         # and the 1 is the amount of extra activities they completed to add to their total challenge count on $player
         if follow_up2 != 'next challenge'
             $player.increase_exp(follow_up2.exp_increase, 1)
+            display_header_mini()
             $player.show_player_level()
         end
         # check user wants to continue
@@ -103,7 +106,7 @@ def main()
 
         # start third challenge
         chg3 = Challenges.new()
-        play = chg3.start_challenge()
+        play = chg3.start_challenge(3)
         # stop game loop if they gave up in the challenge
         return play if play == false
         # otherwise get their EXP from the challenge they just completed
@@ -122,24 +125,33 @@ def main()
         end
 
         display_header_mini()
-        $player.show_player_level()
+
+        puts "Well done #{$player.name}! You made it through all the challenges"
+        puts "Now let's check if you have enough EXP to graduate and start looking for a job"
+        press_any_key()
+
+        # show that the computer is checking on the player's skill level
+        spinner = TTY::Spinner.new("[:spinner] An educator is checking your answer...", format: :bouncing_ball)
+        spinner.auto_spin # Automatic animation with default interval
+        sleep(2)
+        spinner.stop
 
 
-        # check players EXP level
+        # check players EXP level, if less than or equal to the min, they need to do more challenges
         if $player.exp <= $game.exp_level_for_job
             puts
-            puts "I'm sorry, but you don't have enough EXP to graduate yet"
-            puts "You will have to do some extra activities to raise your level to finish the game"
-            puts "Press any key to continue"
-            gets
+            puts "I'm sorry, but you need #{$game.exp_level_for_job - $player.exp} more EXP to graduate"
+            puts "We advise you to complete some extra activities to increase your skills and personal branding"
+            press_any_key_to_continue("[q]uit", "q")
 
             extra_EXP = extra_follow_up_extra_activities(game.follow_up_activities)
 
         end
 
-
-        puts "WELL DONE! You have enough EXP"
-        
+        # display a message when they complete the game with a enough EXP
+        puts "WELL DONE #{$player.name}! You have enough skills and/or your personal branding is strong."
+        press_any_key()
+        # goes back to top of loop, the game will check their EXP and ask if they want to play again or quit
 
     end # of loop
 

@@ -8,7 +8,7 @@ class CodingPractice < ExtraActivities
     def initialize(countdown, header_message, time_up_message, exp)
         super
         display_header_mini()
-        puts "Great work! You just increased your coding skills #{$player.name}"
+        display_header_msg_under_mini("Great work! You just increased your coding skills #{$player.name}")
         @@total_practices += 1
     end
 

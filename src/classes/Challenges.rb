@@ -1,4 +1,6 @@
+require 'tty-spinner'
 require 'tty-prompt'
+require 'faker'
 require_relative "../modules/services"
 require_relative "../modules/view"
 include Services, View
@@ -30,10 +32,18 @@ class Challenges
 
 
 
-    def start_challenge()
+    def start_challenge(challenge_no)
+ 
         display_header_mini()
-        puts "Starting challenge"
-
+        display_header_msg_under_mini(@message)
+        puts "You're about to start challenge ##{challenge_no}!"
+        press_any_key()
+        # spinner = TTY::Spinner.new("[:spinner] Checking your answer ...", format: :pulse_2)
+        spinner = TTY::Spinner.new("[:spinner] An educator is checking your answer...", format: :dots)
+        # spinner = TTY::Spinner.new("[:spinner] Checking your answer ...", format: :bouncing_ball)
+        # dots = TTY::Spinner.new("[dots:]")
+        # ball = TTY::Spinner.new("[:dots]", format: :pulse_2)
+        # dots = TTY::Spinner.new("[:bouncing_ball]", format: :pulse_2)
 
 
 
@@ -42,7 +52,6 @@ class Challenges
         for i in 1..3
             display_header_mini()
             display_header_msg_under_mini(@message)
-
             if i == 3
                 # if player attempts 3 questions
                 # they get bonus points for persistence and practice
@@ -63,7 +72,10 @@ class Challenges
             return play if play == false
             # remove that question from pool into an answered variable
             $game.move_used_question_to_answered(q)
-
+            # add in a time delay to have the user feel like the answer is being checked
+            spinner.auto_spin # Automatic animation with default interval
+            sleep(2)
+            spinner.stop
         end
 
         update_chg_total_exp()
@@ -74,8 +86,7 @@ class Challenges
 
     # 
     def ask_question(question_symbol)
-        puts question_symbol
-        puts question_symbol.class
+
         display_header_mini()
         display_header_msg_under_mini(@message)
         question = @questions[question_symbol] # => this is the object with answers in them
@@ -121,7 +132,7 @@ class Challenges
             if exp == nil
                 #this will set the message var to display again when the question gets asked again
                 # because they didn't figure it out for themselves
-                @message = "My hint for you: '#{help}'"
+                # @message = "My hint for you: '#{help}'"
             else
                 # otherwise they figured it with google and want to re-attempt the question
                 # they also get 1 point for doing the extra work themselves
@@ -129,14 +140,15 @@ class Challenges
                 @help_exp += help
             end
             display_header_mini()
-            display_header_msg_under_mini(@message)
-            puts "Ok we're going to give you another go and your hint will display at the top"
+            # display_header_msg_under_mini(@message)
+            puts "Ok here is your hint:"
+            puts "#{help}"
             press_any_key()
             ask_question(question_symbol)
 
         when ans
             # if their answer is correct
-            @message = "Great work! Your answer was correct"
+            @message = "Educator: #{Faker::Name.name}\n\"Great work #{$player.name}! Your answer was correct\""
             @correct_ans_exp += 7
 
         else
@@ -152,8 +164,7 @@ class Challenges
         # give them time to go and google a solution
         puts
         puts "Ok try Googling it so you can find out how to solve it. I'll wait"
-        puts "Press any key when you're ready to continue"
-        gets 
+        press_any_key()
 
         # give them time to go and google a solution
         prompt = TTY::Prompt.new
@@ -162,8 +173,8 @@ class Challenges
         display_header_msg_under_mini(@message)
         google = prompt.select('Did you find out how to solve it by Googling it?') do |menu|
             menu.help " "
-            menu.choice "Yes", 'yes'
-            menu.choice "I need a hint", 'no'
+            menu.choice "Yes, feeling great", 'yes'
+            menu.choice "No, I need a hint", 'no'
             menu.choice "I give up", lambda {give_up()}
         end
 

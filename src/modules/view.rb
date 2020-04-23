@@ -109,17 +109,17 @@ module View
         when "medium"
             time_up_message = "Your Blog:\n\n#{Faker::Quote.matz}"
         when "youtube"
-            time_up_message = "Your video received #{rand(100..1000)} views this time"
+            time_up_message = "#{$player.name}, your video received #{rand(100..1000)} views this time. You're getting noticed"
         when "codewars"
-            time_up_message = "You just added another #{rand(8..40)} points to your honor level"
+            time_up_message = "Well done #{$player.name}! You just added another #{rand(8..40)} points to your honor level\nYou should stick that on your Github"
         when "hackerrank"
-            time_up_message = "You just added another #{rand(5..20)} hackos to your rank"
+            time_up_message = "Great job #{$player.name}! You just added another #{rand(5..20)} hackos to your rank\.Employers are noticing"
         when "regex"
             time_up_message = "Give yourself a pat on the back for figuring this one out:\n/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/"
         when "hackathon"
-            time_up_message = "You made #{rand(2..10)} new connections at the event"
-        when "meetup"
-            time_up_message = "You made #{rand(2..10)} new connections at the event"
+            time_up_message = "You made #{rand(2..10)} new LinkedIn connections at the Hackathon"
+        when "meetups"
+            time_up_message = "You made #{rand(2..10)} new LinkedIn connections at the Meetup.\nOne of them was secretly a recruiter"
         end
 
         (0..time).reverse_each do |i|
