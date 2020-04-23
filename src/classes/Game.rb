@@ -11,7 +11,7 @@
 class Game
 
     attr_reader :exp_levels, :follow_up_activities, :exp_level_for_job, :exp_level_for_job_offer
-    attr_accessor :questions
+    attr_accessor :questions, :answered_questions
 
     def initialize()
 
@@ -39,6 +39,11 @@ class Game
             "Quit Game" => lambda {game_over()},
         }
 
+        @answered_questions = {}
+
+        # I could potentially reduce these hashes by storing a hash with just the: questions, answers and hints, and standard text
+        # this would be advised if we were storing these on databases to reduce the amount of data stored
+        # for now they will work in this small example
         @questions = {
             q1: {
                 "1" => 1,
@@ -72,16 +77,94 @@ class Game
                 "Question" => "What is 3 + 3?",
                 "Hint" => "Count with your fingers",
                 "Answer" => 6,
-            }
+            },
+            q4: {
+                "7" => 7,
+                "8" => 8,
+                "9" => 9,
+                "Ask for help" => "ask",
+                "Don't know. Move on" => "dont",
+                "I give up" => "give",
+                "Question" => "What is 4 + 4?",
+                "Hint" => "Count with your fingers",
+                "Answer" => 8,
+            },
+            q5: {
+                "8" => 8,
+                "9" => 9,
+                "10" => 10,
+                "Ask for help" => "ask",
+                "Don't know. Move on" => "dont",
+                "I give up" => "give",
+                "Question" => "What is 5 + 5?",
+                "Hint" => "Count with your fingers",
+                "Answer" => 10,
+            },
+            q6: {
+                "11" => 11,
+                "12" => 12,
+                "13" => 13,
+                "Ask for help" => "ask",
+                "Don't know. Move on" => "dont",
+                "I give up" => "give",
+                "Question" => "What is 6 + 6?",
+                "Hint" => "Count with your fingers",
+                "Answer" => 12,
+            },
+            q7: {
+                "13" => 13,
+                "14" => 14,
+                "15" => 15,
+                "Ask for help" => "ask",
+                "Don't know. Move on" => "dont",
+                "I give up" => "give",
+                "Question" => "What is 7 + 7?",
+                "Hint" => "Count with your fingers",
+                "Answer" => 14,
+            },
+            q8: {
+                "15" => 15,
+                "16" => 16,
+                "17" => 17,
+                "Ask for help" => "ask",
+                "Don't know. Move on" => "dont",
+                "I give up" => "give",
+                "Question" => "What is 8 + 8?",
+                "Hint" => "Count with your fingers",
+                "Answer" => 16,
+            },
+            q9: {
+                "25" => 25,
+                "26" => 26,
+                "27" => 27,
+                "Ask for help" => "ask",
+                "Don't know. Move on" => "dont",
+                "I give up" => "give",
+                "Question" => "What is 13 + 13?",
+                "Hint" => "Count with your fingers",
+                "Answer" => 26,
+            },
         }
         
     end
 
+    key = questions.keys.sample
+
+
+    def move_used_question_to_answered(q)
+        # add question that has been asked to answered_questions
+        # remove asked question from original pool
+        @answered_questions[q] = @questions[q]
+        @questions.delete(q)
+    end
+
+    
+    def move_all_answered_questions_back_to_questions(q)
+        # add question that has been asked to answered_questions
+        # remove asked question from original pool
+        @questions = @answered_questions
+        @answered_questions = {}
+    end
+
 end # of Game class
-
-
-
-
-
-
 

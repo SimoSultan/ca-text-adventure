@@ -8,23 +8,20 @@ class Challenges
 
     attr_accessor :help_exp, :correct_ans_exp, :persistence_exp, :total_exp
 
-    def initialize(questions)
+    def initialize()
         # @starting_exp = player.exp
-        @questions = questions
+        @questions = $game.questions
         @help_exp = 0
         @correct_ans_exp = 0
         @persistence_exp = 0
         @total_exp = 0
         @message = "You only get one try per question, so take your time"
         display_header_mini()
-
     end
 
     def update_chg_total_exp()
         @total_exp += @help_exp + @persistence_exp + @correct_ans_exp
     end
-
-
 
     def get_ans(question_symbol)
         #question_number is a symbol here
