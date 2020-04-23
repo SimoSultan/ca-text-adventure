@@ -21,6 +21,8 @@ def main()
     $player = Player.new()
     $player.get_player_info()
 
+
+
     play = true
 
     while play
@@ -54,7 +56,6 @@ def main()
         # displays header again for any key to continue 
         display_header_mini()
         # ask if they want to do anything else before player starts next challenge
-        extra1 = ExtraActivities.new()
         follow_up1 = follow_up_extra_activities()
         # this is because they have chosen not to do any extra activities, so wont earn extra EXP
         if follow_up1 != 'next challenge'
@@ -62,7 +63,7 @@ def main()
             $player.show_player_level()
         end
         # check user wants to continue
-        return false if press_any_key_to_continue("[q]uit") == false
+        return false if press_any_key_to_continue("[q]uit", "q") == false
 
 
 
@@ -70,7 +71,7 @@ def main()
 
 
         # start second challenge
-        chg2 = Challenges.new(game.questions)
+        chg2 = Challenges.new()
         play = chg2.start_challenge()
         # stop game loop if they gave up in the challenge
         return play if play == false
@@ -88,14 +89,14 @@ def main()
             $player.show_player_level()
         end
         # check user wants to continue
-        return false if press_any_key_to_continue("[q]uit") == false
+        return false if press_any_key_to_continue("[q]uit", "q") == false
 
 
         ## STAGE 3 ## 
 
 
         # start third challenge
-        chg3 = Challenges.new(game.questions)
+        chg3 = Challenges.new()
         play = chg3.start_challenge()
         # stop game loop if they gave up in the challenge
         return play if play == false
@@ -120,7 +121,7 @@ def main()
         if $player.exp <= $game.exp_level_for_job
             puts
             puts "I'm sorry, but you don't have enough EXP to graduate yet"
-            puts "You will have to do some extra activities to raise your level"
+            puts "You will have to do some extra activities to raise your level to finish the game"
             puts "Press any key to continue"
             gets
 

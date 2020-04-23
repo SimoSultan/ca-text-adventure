@@ -102,18 +102,18 @@ module Services
 			$player.show_player_level()
 
 
-			return if press_any_key_to_continue("[f]inish levelling up") == false
+			return if press_any_key_to_continue("[f]inish levelling up", "f") == false
 		end
 	end
 
 
 
 	# getting user to continue to next challenge or quit out the app
-	def press_any_key_to_continue(word)
+	def press_any_key_to_continue(word, confirm)
 		puts
 		puts "Press any key to continue... or #{word}"
 		resp = gets.strip.downcase[0]
-		return false if (resp == "q" || resp == "f")
+		return false if resp == confirm
 	end
 
 

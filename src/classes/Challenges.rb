@@ -16,7 +16,7 @@ class Challenges
         @persistence_exp = 0
         @total_exp = 0
         @message = "You only get one try per question, so take your time"
-        display_header_mini()
+        # display_header_mini()
     end
 
     def update_chg_total_exp()
@@ -34,6 +34,10 @@ class Challenges
         display_header_mini()
         puts "Starting challenge"
 
+
+
+
+
         # run a loop 3 times 
         for i in 1..3
             display_header_mini()
@@ -45,10 +49,20 @@ class Challenges
                 @persistence_exp += 10
             end
 
+            # get a random question from the pool of questions
+            # q is a symbol
+            q = @questions.keys.sample
+            puts q
+
             # these make sure to ask new questions each loop
-            question_symbol = "q#{i}".to_sym
-            play = ask_question(question_symbol)
+            # question_symbol = "q#{i}".to_sym
+            # play = ask_question(question_symbol)
+            play = ask_question(q)
+            # stop loop
             return play if play == false
+            # remove that question from pool into an answered variable
+            $game.move_used_question_to_answered(q)
+
         end
 
         update_chg_total_exp()
@@ -59,6 +73,8 @@ class Challenges
 
     # 
     def ask_question(question_symbol)
+        puts question_symbol
+        puts question_symbol.class
         display_header_mini()
         display_header_msg_under_mini(@message)
         question = @questions[question_symbol] # => this is the object with answers in them

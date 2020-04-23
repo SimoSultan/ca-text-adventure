@@ -15,8 +15,8 @@ class Game
 
     def initialize()
 
-        @exp_level_for_job = 90
-        @exp_level_for_job_offer = 110
+        @exp_level_for_job = 150
+        @exp_level_for_job_offer = 170
        
         @exp_levels = {
             "Master" => 100,
@@ -148,8 +148,6 @@ class Game
         
     end
 
-    key = questions.keys.sample
-
 
     def move_used_question_to_answered(q)
         # add question that has been asked to answered_questions
@@ -159,10 +157,11 @@ class Game
     end
 
     
-    def move_all_answered_questions_back_to_questions(q)
+    def move_all_answered_questions_back_to_questions()
         # add question that has been asked to answered_questions
         # remove asked question from original pool
-        @questions = @answered_questions
+        # only do this when @answered_questions IS NOT empty (i.e on 2nd loop)
+        @questions = @answered_questions if !@answered_questions.empty?
         @answered_questions = {}
     end
 

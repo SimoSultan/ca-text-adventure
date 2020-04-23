@@ -1,4 +1,7 @@
-require "tty-prompt"
+# require "tty-prompt"
+require_relative "../modules/view"
+require_relative "../modules/services"
+include View, Services
 
 class Player
 
@@ -14,32 +17,41 @@ class Player
         @player_completed_challenges = 0
     end
 
-    	# get players name
+    # get players name
     # get players chosen exp level to start out at
     # as of 200421 - the only difference is that the play starts out at a higher level of EXP, 
     #               - would like to be able to make the game harder for player with higher level in future
 	def get_player_info()
-        prompt = TTY::Prompt.new
+        # prompt = TTY::Prompt.new
+        display_header_mini()
+
+
         puts "Before we start, what is your coder name?"
         print "=> "; user_name = gets.strip.capitalize
         puts
-		user_exp = prompt.select("What level of coder do you wish to start out as?", $game.exp_levels, cycle: true)
-
-        puts "Hi! #{user_name}. You would like to start out as experience level '#{$game.exp_levels.key(user_exp)}'"
+        puts "Hi! #{user_name}"
+		# user_exp = prompt.select("What level of coder do you wish to start out as?", $game.exp_levels, cycle: true)
+        # puts "Hi! #{user_name}. You would like to start out as experience level '#{$game.exp_levels.key(user_exp)}'"
         puts
 
-        puts  "Is this correct? y/n"
-		print "=> "; resp = gets.strip
-		
-		if resp == "y"
-			# set the player info into a hash to send into the player class when we return out of this method
-            @name = user_name
-            @exp = user_exp
-            @level: $game.exp_levels.key(@exp)
-		end
+        # call the method again if they're not happy with their name
+        get_player_info() if press_any_key_to_continue("[r]etry", "r") == false
 
-		# call the method again if it wasn't a yes
-		get_player_info()
+        # puts  "Is this correct? y/n"
+		# print "=> "; resp = gets.strip
+		
+        # call the method again if it wasn't a yes
+        # if resp != "y"
+        #     get_player_info() if resp == "n"
+        #     puts "Sorry that wasn't a valid input"
+        
+        # set the player info into a hash to send into the player class when we return out of this method
+        @name = user_name
+        # @exp = user_exp
+        # @level = $game.exp_levels.key(@exp)
+        @level = "Noob"
+
+
 
     end
 
