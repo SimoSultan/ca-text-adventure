@@ -8,6 +8,8 @@ require_relative './classes/Challenges'
 require_relative './classes/PersonalBranding'
 require_relative './classes/sub_classes'
 
+require "colorize"
+
 include View, Services
 
 def main()
@@ -106,9 +108,9 @@ def main()
         press_any_key()
 
         # show the player that the computer is checking on the player's skill level
-        spinner = TTY::Spinner.new("[:spinner] An educator is checking your answer...", format: :bouncing_ball)
+        spinner = TTY::Spinner.new("[:spinner] Consulting our records...", format: :bouncing_ball)
         spinner.auto_spin
-        sleep(2)
+        sleep(3)
         spinner.stop
 
 
@@ -116,16 +118,17 @@ def main()
         # or if they have not completed 3 challenges
          # add extra activities EXP to player if they complete any
         if $player.exp <= $game.exp_level_for_job || $player.player_completed_challenges < $game.challenges_to_complete_before_graduating
-            puts
+            display_header_mini()
             puts "I'm sorry, but you need #{$game.exp_level_for_job - $player.exp} more EXP to graduate"
             puts "We advise you to complete some extra activities to increase your skills and personal branding"
             press_any_key_to_continue("[q]uit", "q")
-            extra_EXP = extra_follow_up_extra_activities(game.follow_up_activities)
+            extra_EXP = extra_follow_up_extra_activities()
         end
 
-
         # GAME FINISHED
-        puts "WELL DONE #{$player.name}! You have enough skills and/or your personal branding is strong."
+        display_header_mini()
+        display_header_msg_under_mini("WELL DONE #{($player.name).upcase}!\nYou just completed ".colorize(:light_green) + "Your".colorize(:light_blue) + "Coding".colorize(:light_red) + "Journey".colorize(:light_blue))
+        puts " You have enough skills and/or your personal branding is strong.".
         press_any_key() # goes back to top of loop, game will check their EXP and ask if they want to play again or quit
 
 
@@ -135,3 +138,4 @@ end # of main method
 
 
 main()
+

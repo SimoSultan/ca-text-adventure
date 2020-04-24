@@ -15,8 +15,8 @@ class Game
 
     def initialize()
 
-        @exp_level_for_job = 150
-        @exp_level_for_job_offer = 170
+        @exp_level_for_job = 130
+        @exp_level_for_job_offer = 150
         @challenges_to_complete_before_graduating = 3
        
         @exp_levels = {
@@ -28,13 +28,13 @@ class Game
 
         @follow_up_activities = {
             "Move on to next challenge" => 'next challenge',
-            "Tweet about it" => lambda {Twitter.new()},
+            "Write a Tweet" => lambda {Twitter.new()},
             "Write a Medium blog" => lambda {Medium.new()},
             "Make a YouTube video" => lambda {YouTube.new()},
-            "Do a HackerRank challenge" => lambda {HackerRank.new()},
-            "Do a Codewars challenge" => lambda {Codewars.new()},
+            "Do a HackerRank activity" => lambda {HackerRank.new()},
+            "Do a Codewars activity" => lambda {Codewars.new()},
             # "Do a Excercism challenge" => lambda {Excercism.new()},
-            "Do a RegexCrossword challenge" => lambda {RegexCrossword.new()},
+            "Do a RegexCrossword activity" => lambda {RegexCrossword.new()},
             "Attend a Meetup" => lambda {Meetups.new()},
             "Attend a Hackathon" => lambda {Hackathon.new()},
             "Quit Game" => lambda {game_over()},

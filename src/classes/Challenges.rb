@@ -17,7 +17,7 @@ class Challenges
         @correct_ans_exp = 0
         @persistence_exp = 0
         @total_exp = 0
-        @message = "You only get one try per question, so take your time"
+        @message = "You only get one try per question, so take your time".colorize(:light_green)
     end
 
 
@@ -60,6 +60,16 @@ class Challenges
             spinner.stop
         end
 
+        # if player wants to help out
+        # give extra 10 EXP for helping
+        # otherwise move on
+
+        exp_from_helping = does_player_want_to_offer_help(challenge_no)
+        if exp_from_helping == 'yes'
+            display_countdown_timer(20, ("Thank you for donating your time to help out others").colorize(:light_green), "Great work #{$player.name}. You just helped #{Faker::Name.name} complete the challenge as well", 10)
+            @help_exp += 10
+        end 
+
         update_chg_total_exp()
     end # of start challenge
 
@@ -69,7 +79,7 @@ class Challenges
 
         # get question object from pool of questions (with the symbol passed in)
         # get the answer to the question before it is shown
-        # display MCQ to player (Hide hint, question and answer from player by only selecting relevent key/value pairs)
+        # display MCQ to player (Hide hint, question and answer from player by only selecting relevant key/value pairs)
         prompt = TTY::Prompt.new
         display_header_mini()
         display_header_msg_under_mini(@message)
@@ -97,7 +107,7 @@ class Challenges
             return give_up()
 
         when "dont"
-            @message = "The answer was #{ans}. No exp was awarded"
+            @message = "The answer was #{ans}\nNo exp was awarded".colorize(:light_red)
 
         when "ask"
             help = ask_for_help(question) # returns either exp increase, hint from the question, or they gave up
@@ -109,17 +119,22 @@ class Challenges
             # re-ask the question again so they can answer it with hint or their own solution
             exp = Integer(help) rescue nil
             display_header_mini()
-            @help_exp += help if exp != nil
+            display_header_msg_under_mini(@message)
+            if exp != nil
+                @help_exp += help 
+                puts "Fantastic work on sourcing your own solution\n"
+                puts "You just earnt an extra #{help} EXP for doing so"
+            end
             (puts "Ok here is your hint:\n#{help}") if exp == nil
             press_any_key()
             ask_question(question_symbol)
 
         when ans
-            @message = "Educator: #{Faker::Name.name}\n\"Great work #{$player.name}! Your answer was correct\""
+            @message = "Educator: #{Faker::Name.name}\n\"Great work #{$player.name}! Your answer was correct\"".colorize(:light_green)
             @correct_ans_exp += 7
 
         else
-            @message = "That was incorrect sorry. The answer was #{ans}\nNo exp was awarded"
+            @message = "Unfortunately your last answer was incorrect\nThe correct answer was:  #{ans}\nNo exp was awarded".colorize(:light_red)
         end
     end
 
@@ -148,7 +163,7 @@ class Challenges
         # otherwise give them 1 EXP for solving the question themselves
         return false if google == false
         return give_hint(question) if google == 'no'
-        return 1 if google == 'yes'
+        return 2 if google == 'yes'
     end
 
 
@@ -158,8 +173,4 @@ class Challenges
     end
 
 end # of Challenge class
-
-
-
-
 

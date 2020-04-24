@@ -46,10 +46,10 @@ module Services
 	# they have list of options from sub_classes
 	def follow_up_extra_activities()
 		display_header_mini()
-		display_header_msg_under_mini("Great work on the challenge questions\nNow earn some extra EXP on an extra activity\nHint: The more time you put in, the more EXP you get")
+		display_header_msg_under_mini(("Would you like to earn some extra EXP on an extra activity?\nHint: The more time you put in, the more EXP you get".colorize(:light_green)))
 		follow_up_activities = $game.follow_up_activities
 		prompt = TTY::Prompt.new
-		choice = prompt.select("How would you like to proceed?\n", follow_up_activities, cycle: true, per_page: 11, help: '')
+		choice = prompt.select("If so, which one would you like to do?\n", follow_up_activities, cycle: true, per_page: 11, help: '')
 	end
 
 
@@ -74,7 +74,7 @@ module Services
 	# getting user to continue to next challenge or quit out the app
 	def press_any_key_to_continue(word, confirm)
 		puts
-		puts "Press any key to continue... or #{word}".colorize(:light_green)
+		puts "Press any key to continue... or #{word}".colorize(:light_cyan)
 		resp = gets.strip.downcase[0]
 		return false if resp == confirm
 	end
@@ -84,7 +84,7 @@ module Services
 	def press_any_key()
 		puts
 		puts
-		puts "Press any key to continue...".colorize(:light_green)
+		puts "Press any key to continue...".colorize(:light_cyan)
 		gets 
 	end
 
@@ -93,13 +93,29 @@ module Services
 	# ask user if they want to restart the game		
 	def does_player_want_to_restart()
 		puts
-		puts "Do you want to play again? y/n".colorize(:light_green)
+		puts "Do you want to play again? y/n".colorize(:light_cyan)
 		print "=> "; play_again = gets.strip.downcase[0]
 		# player wants to play again
 		return true if play_again == "y"
 		# player does NOT want to play again
 		return false
 	end
+
+
+
+	def does_player_want_to_offer_help(challenge_no)
+		prompt = TTY::Prompt.new
+		display_header_mini()
+		display_header_msg_under_mini(@message)
+		puts "#{$player.name} just completed challenge ##{challenge_no}"
+		puts
+        user_resp = prompt.select("Now, would you like to help out some colleagues who are stuck?") do |menu|
+            menu.help " "
+            menu.choice "Yes, happy to", 'yes'
+            menu.choice "I'd rather move on thankyou", 'no'
+	   end
+	   return user_resp
+    end
 
 	
 end 

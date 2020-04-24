@@ -16,10 +16,8 @@ class Player
 
 
 	def get_player_info()
-        # prompt = TTY::Prompt.new
-        # this is stopping the game from running if users screen size is too small
+        # returns a message to use to increase screen size if is too small
         return false if display_header_main() == false
-
 
         puts "Before we start, what is your coder name?".colorize(:light_green)
         print "=> "; user_name = gets.strip.capitalize
@@ -33,6 +31,7 @@ class Player
         @name = user_name
         @level = "Noob"
 
+        # prompt = TTY::Prompt.new
         # will add these back in, in future update when I can make different levels of questions for the player
         # user_exp = prompt.select("What level of coder do you wish to start out as?", $game.exp_levels, cycle: true)
         # puts "Hi! #{user_name}. You would like to start out as experience level '#{$game.exp_levels.key(user_exp)}'"
@@ -74,7 +73,8 @@ class Player
 
 
     # future feature
-    def player_compared_themselves()
+    def player_compared_themselves() 
+        
     end
 
 
@@ -103,7 +103,10 @@ class Player
 		end
 
 		return play_again = true
-	end # of is player experienced enough
+    end # of is player experienced enough
+    
+
+
 
 end # of class
 

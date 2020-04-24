@@ -1,0 +1,58 @@
+9. It is must for Ruby to use a compiler.
+a) True
+b) False
+Answer: b
+Explanation: No compiler is required for ruby as it is an interpreted language
+
+7. What will be the output of the following?
+"Ruby".reverse.upcase
+a) RUBY
+b) ybuR
+c) YBUR
+d) YBUr
+View Answer
+Answer: c
+Explanation: First the given string is reversed and then .upcase method is used to capitalize it.
+Output:
+"YBUR"
+
+
+What will the following output? (pick one of these or make a harder one)
+true    ? "true" : "false"
+false   ? "true" : "false"
+nil     ? "true" : "false"
+1       ? "true" : "false"
+0       ? "true" : "false"
+"false" ? "true" : "false"
+
+
+What does the method chars() do on a string?
+
+
+What is the shortest way to capitalize each string in an array of strings
+Array#map(&:capitalize) - answer
+Array#map(:&capitalize)
+Array#each{|x|x.capitalize}
+Array#each{|x|x.capitalize!}
+
+
+
+In Ruby, you can overwrite a to_s() method to print out what you want with puts.
+True
+False
+
+What is the difference between Array#map and Array#each in Ruby?
+
+
+What is the difference between calling super and super()
+
+
+4) State TRUE or FALSE. True expression part comes first after ? (question mark) symbol and before : (colon) symbol.
+A) FALSE
+B) TRUE
+C) -
+D) -
+
+
+How many types of variables are used in Ruby
+4

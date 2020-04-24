@@ -30,7 +30,7 @@ module View
         # puts "Welcome to Your Coding Journey"
         puts
         puts "  Welcome to:"
-        puts "-" * $terminal_width
+        puts "-".colorize(:light_black) * $terminal_width
         puts
         puts  " " * (($terminal_width-26)/2) + '/\_/\ ___   _   _  _ __   '.colorize(:light_blue)
         puts  " " * (($terminal_width-26)/2) + '\_ _// _ \ | | | || __|   '.colorize(:light_blue)
@@ -52,7 +52,7 @@ module View
         puts
         puts
         puts  " " * ($terminal_width-22) + "A game by @simo_sultan"
-        puts  "-" * $terminal_width
+        puts  "-".colorize(:light_black) * $terminal_width
         puts
     end
 
@@ -61,13 +61,13 @@ module View
     # display the header that will sit at the top of the screen throughout the game
     def display_header_mini()
         system "clear"
-        puts  " " * (($terminal_width-13)/2) + '    ___  '.colorize(:light_red) + '   __   '.colorize(:light_blue)
+        puts  " " * (($terminal_width-13)/2) +                                  '    ___  '.colorize(:light_red) + '   __   '.colorize(:light_blue)
         puts  " " * (($terminal_width-26)/2) + '/\_/\ '.colorize(:light_blue) + '   / __\ '.colorize(:light_red) + '   \ \  '.colorize(:light_blue)
         puts  " " * (($terminal_width-26)/2) + '\_ _/ '.colorize(:light_blue) + '  / /    '.colorize(:light_red) + '    \ \ '.colorize(:light_blue)
-        puts  " " * (($terminal_width-26)/2) + ' / \ '.colorize(:light_blue)  + '  / /___ '.colorize(:light_red) + '  /\_/ / '.colorize(:light_blue)
-        puts  " " * (($terminal_width-26)/2) + ' \_/ '.colorize(:light_blue)  + '  \____/  '.colorize(:light_red) + ' \___/  '.colorize(:light_blue)
+        puts  " " * (($terminal_width-26)/2) + ' / \ '.colorize(:light_blue) + '  / /___ '.colorize(:light_red) + '  /\_/ / '.colorize(:light_blue)
+        puts  " " * (($terminal_width-26)/2) + ' \_/ '.colorize(:light_blue) + '  \____/  '.colorize(:light_red) + ' \___/  '.colorize(:light_blue)
         puts  " " * ($terminal_width-14) + "#{$player.name}: #{$player.exp} EXP".colorize(:light_yellow)
-        puts  "-" * $terminal_width
+        puts  "-".colorize(:light_black) * $terminal_width
         puts
     end
 
@@ -75,15 +75,16 @@ module View
     # display the header that will sit at the top of the screen throughout the game
     def display_header_msg_under_mini(message)
         return if message == ""
-        puts "#{message}".colorize(:light_green)
-        puts "-" * $terminal_width
+        # puts "#{message}".colorize(:light_green)
+        puts "#{message}"
+        puts "-".colorize(:light_black) * $terminal_width
         puts
     end
     
     # display the message that will be shown to user when the game finishes
     def display_outro(condition)
-        (puts "Thanks for playing") if condition == 'game over'
-        (puts "You gave up, how unfortunate.") if condition == 'give up'
+        (puts "Thanks for playing\nYou made Chuck Norris proud") if condition == 'game over'
+        (puts "You gave up, how unfortunate\nBetter luck next time") if condition == 'give up'
     end
 
 
@@ -101,7 +102,7 @@ module View
         when "youtube"
             time_up_message = "#{$player.name}, your video received #{rand(100..1000)} views this time. You're getting noticed"
         when "codewars"
-            time_up_message = "Well done #{$player.name}! You just added another #{rand(8..40)} points to your honor level\nYou should stick that on your Github"
+            time_up_message = "Well done #{$player.name}! You just added another #{rand(8..40)} points to your honor level\nYou should share that on Twitter"
         when "hackerrank"
             time_up_message = "Great job #{$player.name}! You just added another #{rand(5..20)} hackos to your rank\.Employers are noticing"
         when "regex"
@@ -119,7 +120,7 @@ module View
                 puts "#{i}!"
             elsif i == 0 
                 display_header_mini()
-                display_header_msg_under_mini("For that time you put in, you just earnt #{exp} EXP")
+                display_header_msg_under_mini("For that time you put in, you just earnt #{exp} EXP".colorize(:light_green))
                 puts "#{time_up_message}"
             else 
                 puts "#{i}"
@@ -131,4 +132,3 @@ module View
     end # of countdown timer
 
 end # end of View module
-
