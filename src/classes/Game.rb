@@ -17,6 +17,7 @@ class Game
 
         @exp_level_for_job = 150
         @exp_level_for_job_offer = 170
+        @challenges_to_complete_before_graduating = 3
        
         @exp_levels = {
             "Master" => 100,
