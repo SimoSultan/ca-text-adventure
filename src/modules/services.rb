@@ -4,36 +4,8 @@ require_relative "view"
 include View
 
 
-# this module will handle UX
+# this module will handle mostly UX
 module Services
-
-
-	# # get players name
-    # # get players chosen exp level to start out at
-    # # as of 200421 - the only difference is that the play starts out at a higher level of EXP, 
-    # #               - would like to be able to make the game harder for player with higher level in future
-	# def get_player_info()
-    #     prompt = TTY::Prompt.new
-    #     puts "Before we start, what is your coder name?"
-    #     print "=> "; user_name = gets.strip.capitalize
-    #     puts
-	# 	user_exp = prompt.select("What level of coder do you wish to start out as?", $game.exp_levels, cycle: true)
-
-    #     puts "Hi! #{user_name}. You would like to start out as experience level '#{$game.exp_levels.key(user_exp)}'"
-    #     puts
-
-    #     puts  "Is this correct? y/n"
-	# 	print "=> "; resp = gets.strip
-		
-	# 	if resp == "y"
-	# 		# set the player info into a hash to send into the player class when we return out of this method
-	# 		return player_info = {name: user_name, level: $game.exp_levels.key(user_exp), exp: user_exp}
-	# 	end
-
-	# 	# call the method again if it wasn't a yes
-	# 	get_player_info()
-
-    # end
 
 
 
@@ -59,7 +31,6 @@ module Services
 
 
 
-
 	# when the user wants to end the game
 	# stops the loop and displays a message to player
 	def game_over()
@@ -71,17 +42,13 @@ module Services
 
 
 
-
 	# offering players if they want to work on their level/grind before their next challenge
 	# they have list of options from sub_classes
 	def follow_up_extra_activities()
-
 		display_header_mini()
 		display_header_msg_under_mini("Great work on the challenge questions\nNow earn some extra EXP on an extra activity\nHint: The more time you put in, the more EXP you get")
-
 		follow_up_activities = $game.follow_up_activities
 		prompt = TTY::Prompt.new
-		
 		choice = prompt.select("How would you like to proceed?\n", follow_up_activities, cycle: true, per_page: 11, help: '')
 	end
 
@@ -89,20 +56,15 @@ module Services
 	# runs the follow_up_extra_activities method in a loop to allow the player to increase their level
 	# they can finish when they're happy with their level
 	def extra_follow_up_extra_activities()
-
 		display_header_mini()
 		follow_up_activities = $game.follow_up_activities
 		continue = true
 
 		while continue
 			catch_up_EXP = follow_up_extra_activities()
-			if catch_up_EXP != 'next challenge'
-				$player.increase_exp(catch_up_EXP.exp_increase, 1)
-			end
+			($player.increase_exp(catch_up_EXP.exp_increase, 1)) if catch_up_EXP != 'next challenge'
 			display_header_mini()
 			$player.show_player_level()
-
-
 			return if press_any_key_to_continue("[f]inish levelling up", "f") == false
 		end
 	end
@@ -119,7 +81,6 @@ module Services
 
 
 
-
 	def press_any_key()
 		puts
 		puts
@@ -129,16 +90,13 @@ module Services
 
 
 
-
 	# ask user if they want to restart the game		
 	def does_player_want_to_restart()
 		puts
 		puts "Do you want to play again? y/n".colorize(:light_green)
 		print "=> "; play_again = gets.strip.downcase[0]
-		
 		# player wants to play again
 		return true if play_again == "y"
-
 		# player does NOT want to play again
 		return false
 	end

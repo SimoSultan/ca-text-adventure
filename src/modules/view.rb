@@ -60,7 +60,6 @@ module View
 
     # display the header that will sit at the top of the screen throughout the game
     def display_header_mini()
-        
         system "clear"
         puts  " " * (($terminal_width-13)/2) + '    ___  '.colorize(:light_red) + '   __   '.colorize(:light_blue)
         puts  " " * (($terminal_width-26)/2) + '/\_/\ '.colorize(:light_blue) + '   / __\ '.colorize(:light_red) + '   \ \  '.colorize(:light_blue)
@@ -70,15 +69,12 @@ module View
         puts  " " * ($terminal_width-14) + "#{$player.name}: #{$player.exp} EXP".colorize(:light_yellow)
         puts  "-" * $terminal_width
         puts
-        # puts String.colors                       # return array of all possible colors names
-        # puts String.modes 
     end
+
 
     # display the header that will sit at the top of the screen throughout the game
     def display_header_msg_under_mini(message)
-
         return if message == ""
-    
         puts "#{message}".colorize(:light_green)
         puts "-" * $terminal_width
         puts
@@ -86,23 +82,17 @@ module View
     
     # display the message that will be shown to user when the game finishes
     def display_outro(condition)
-
-        if condition == 'game over'
-            puts "Thanks for playing"
-        end
-
-        if condition == 'give up'
-            puts "You gave up, how unfortunate."
-        end
+        (puts "Thanks for playing") if condition == 'game over'
+        (puts "You gave up, how unfortunate.") if condition == 'give up'
     end
 
 
     # this is the countdown that they will see when they are completing their extra activity
     def display_countdown_timer(time, header_msg, time_up_message, exp)
 
-
         system "clear"
 
+        # this is message displayed when the timer finishes
         case time_up_message
         when "twitter"
             time_up_message = "Your Tweet:\n\n#{Faker::ChuckNorris.fact}"
@@ -123,7 +113,6 @@ module View
         end
 
         (0..time).reverse_each do |i|
-
             display_header_mini()
             display_header_msg_under_mini(header_msg)
             if i == 1 
@@ -136,10 +125,10 @@ module View
                 puts "#{i}"
             end
             sleep 1
-        end
-
+        end # of loop
+        
         press_any_key()
+    end # of countdown timer
 
-    end
-end
+end # end of View module
 
