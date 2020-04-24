@@ -146,22 +146,21 @@ class Game
                 "Answer" => 26,
             },
         }
-        
-    end
+    end 
 
 
+    # add question that has been asked to answered_questions
+    # remove asked question from original pool
     def move_used_question_to_answered(q)
-        # add question that has been asked to answered_questions
-        # remove asked question from original pool
         @answered_questions[q] = @questions[q]
         @questions.delete(q)
     end
 
-    
+
+    # add question that has been asked to answered_questions
+    # remove asked question from original pool
+    # only do this when @answered_questions IS NOT empty (i.e on 2nd loop)
     def move_all_answered_questions_back_to_questions()
-        # add question that has been asked to answered_questions
-        # remove asked question from original pool
-        # only do this when @answered_questions IS NOT empty (i.e on 2nd loop)
         @questions = @answered_questions if !@answered_questions.empty?
         @answered_questions = {}
     end

@@ -1,6 +1,8 @@
 require_relative "PersonalBranding"
 require_relative "CodingPractice"
 
+
+
 class Twitter < PersonalBranding
     @@tweets = 0
     @@twitter_exp_earned = 0
@@ -9,7 +11,6 @@ class Twitter < PersonalBranding
 
     def initialize(countdown = 5, header_msg = "Generating your interesting Tweet takes some time", time_up_message = "twitter", exp_increase = 5)
         super
-        # puts "Great tweet #{$player.name}"
         @exp_increase = exp_increase
         @@tweets += 1
     end
@@ -21,6 +22,7 @@ end
 
 
 
+
 class Medium < PersonalBranding
     @@blogs = 0
     @@medium_exp_earned = 0
@@ -29,7 +31,6 @@ class Medium < PersonalBranding
 
     def initialize(countdown = 15, header_msg = "Writing a blog doesn't happen immediately\nTakes time to craft a meaningful entry", time_up_message = "medium", exp_increase = 10)
         super
-        # puts "Great work on your blog"
         @exp_increase = exp_increase
         @@blogs += 1
     end
@@ -41,6 +42,7 @@ end
 
 
 
+
 class YouTube < PersonalBranding
     @@videos = 0
     @@youtube_exp_earned = 0
@@ -49,7 +51,6 @@ class YouTube < PersonalBranding
 
     def initialize(countdown = 30, header_msg = "Off editing your next coding video", time_up_message = "youtube", exp_increase = 20)
         super
-        # puts "Great work on your video"
         @exp_increase = exp_increase
         @@videos += 1
     end
@@ -61,6 +62,7 @@ end
 
 
 
+
 class Codewars < CodingPractice
     @@kyus = 0
     @@codewars_exp_earned = 0
@@ -69,7 +71,6 @@ class Codewars < CodingPractice
 
     def initialize(countdown = 7, header_msg = "Not all Kyu's are as easy as they look\nYou have to ask someone for help", time_up_message = "codewars", exp_increase = 5)
         super
-        # puts "Great work on your Kyu"
         @exp_increase = exp_increase
         @@kyus += 1
     end
@@ -81,6 +82,7 @@ end
 
 
 
+
 class HackerRank < CodingPractice
     @@rank = 0
     @@hackerrank_exp_earned = 0
@@ -89,7 +91,6 @@ class HackerRank < CodingPractice
 
     def initialize(countdown = 7, header_msg = "Prepping for those interview questions\nLots of them, better take the time to practice", time_up_message = "hackerrank", exp_increase = 5)
         super
-        # puts "Great work on your rank"
         @exp_increase = exp_increase
         @@rank += 1
     end
@@ -109,7 +110,6 @@ end
 
 #     def initialize(countdown = 7, header_msg = "Generating your interesting Tweet takes some time", time_up_message = "exercism", exp_increase = 5)
 #         super
-#         # puts "Great work on your exercism"
 #         @exp_increase = exp_increase
 #         @@exercises += 1
 #     end
@@ -129,7 +129,6 @@ class RegexCrossword < CodingPractice
 
     def initialize(countdown = 10, header_msg = "What the heck is that Regex, better go research it", time_up_message = "regex", exp_increase = 5)
         super
-        # puts "Great work on your crossword"
         @exp_increase = exp_increase
         @@crosswords += 1
     end
@@ -139,6 +138,8 @@ class RegexCrossword < CodingPractice
     end
 end
 
+
+
 class Hackathons < PersonalBranding 
     @@hackathons = 0
     @@hackathon_exp_earned = 0
@@ -147,7 +148,6 @@ class Hackathons < PersonalBranding
 
     def initialize(countdown = 30, header_msg = "Here you only have to wait 30 seconds to get experience", time_up_message = "hackathons", exp_increase = 20)
         super
-        # puts "Great work on your teamwork"
         @exp_increase = exp_increase
         @@hackathons += 1
     end
@@ -157,6 +157,8 @@ class Hackathons < PersonalBranding
     end
 end
 
+
+
 class Meetups < PersonalBranding
     @@meetups = 0
     @@meetup_exp_earned = 0
@@ -165,7 +167,6 @@ class Meetups < PersonalBranding
 
     def initialize(countdown = 20, header_msg = "Making new connections at your Meetup", time_up_message = "meetups", exp_increase = 20)
         super
-        # puts "Great work on your attendance"
         @exp_increase = exp_increase
         @@meetups += 1
     end
