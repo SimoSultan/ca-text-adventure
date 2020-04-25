@@ -97,15 +97,14 @@ Audience for the game is mainly tailored towards a programmer. As the type of qu
 
 
 ## Design and Implementation
-![Your Coding Journey Flowchart]()
+![Your Coding Journey Flowchart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/updated-flow-chart/entire-app-flow.jpg)
 
 
 ## Project Timeline & Planning Progress
 A full record of the planning can be found here:
-- [Development Log]()
-- [My Trello Board]()
-
-![Trello Board Screenshot]()
+- [Development Log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md)
+- [My Trello Board](https://trello.com/b/hdiSXwWJ/codingbootcamptextadventure)
+![Trello Board Screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/implementation-plan-trello-board.png)
 
 
 
