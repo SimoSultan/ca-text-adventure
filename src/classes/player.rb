@@ -134,17 +134,18 @@ class Player
 
 
     def is_player_experienced_enough_yet()
-        # 1st: they choose master, this is User Story 4, it's supposed to be a joke that they don't need to be at a bootcamp and are offered to restart the game
-        # 2nd: if player has enough exp to apply for a job, but still not high enough to be offered a job
-        # 3rd: if player has enough exp to be offered a job
+        # 1st: if player has enough exp to apply for a job, but still not high enough to be offered a job
+        # 2nd: if player has enough exp to be offered a job
         # else continue game 
 
-		if @level == "Master"
-			puts "What are you doing here at a bootcamp, you've already mastered all the languages"
-			play_again = does_player_want_to_restart()
-			return play_again if play_again == false
+        # Feature put on hold: if they choose master, this is User Story 4, it's supposed to be a joke that they don't need to be at a bootcamp and are offered to restart the game
+		# if @level == "Master"
+		# 	puts "What are you doing here at a bootcamp, you've already mastered all the languages"
+		# 	play_again = does_player_want_to_restart()
+        #     return play_again if play_again == false
+        # end
 
-		elsif @exp > $game.exp_level_for_job && @exp < $game.exp_level_for_job_offer
+		if @exp > $game.exp_level_for_job && @exp < $game.exp_level_for_job_offer
 			show_player_level()
 			puts
 			puts "Well done. You have enough EXP to graduate"

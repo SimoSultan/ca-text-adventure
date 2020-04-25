@@ -92,12 +92,22 @@ module Services
 
 	# ask user if they want to restart the game		
 	def does_player_want_to_restart()
-		puts
-		puts "Do you want to play again? y/n".colorize(:light_cyan)
-		print "=> "; play_again = gets.strip.downcase[0]
+
+		begin
+			puts
+			puts "Do you want to play again? y/n".colorize(:light_cyan)
+			print "=> "; play_again = gets.strip.downcase[0]
+            raise StandardError if play_again == "" || play_again != "y" || play_again != "n"
+        rescue => exception
+            puts
+            puts "Not a valid input sorry\nPlease try again".colorize(:light_red)
+            press_any_key()
+            retry
+        end
+
 		# player wants to play again
 		return true if play_again == "y"
-		# player does NOT want to play again
+		# otherwise player does NOT want to play again
 		return false
 	end
 
