@@ -64,8 +64,7 @@ def main()
             display_header_mini()
             $player.show_exp_increase(follow_up1.exp_increase)
         end
-        return false if press_any_key_to_continue("[q]uit", "q") == false
-
+        # return false if press_any_key_to_continue("[q]uit", "q") == false
 
 
         ## STAGE 2 ## 
@@ -82,7 +81,17 @@ def main()
             display_header_mini()
             $player.show_player_level()
         end
-        return false if press_any_key_to_continue("[q]uit", "q") == false
+
+
+        # COMPARISON ENEMY STRIKES TO KNOCK THE PLAYER DOWN
+
+        # quit the game if player gave up
+        # give player EXP or not, depending on their answer
+        potential_EXP_increase = $player.player_compared_themselves(10, "first")
+        return false if potential_EXP_increase == false
+        $player.handle_player_comparing_themselves(potential_EXP_increase, 10)
+
+        # return false if press_any_key_to_continue("[q]uit", "q") == false
 
 
         ## STAGE 3 ## 
@@ -119,9 +128,19 @@ def main()
          # add extra activities EXP to player if they complete any
         if $player.exp <= $game.exp_level_for_job || $player.player_completed_challenges < $game.challenges_to_complete_before_graduating
             display_header_mini()
-            puts "I'm sorry, but you need #{$game.exp_level_for_job - $player.exp} more EXP to graduate"
+            puts "I'm sorry, but you need " + "#{$game.exp_level_for_job - $player.exp} more EXP".colorize(:light_yellow) + " to graduate"
             puts "We advise you to complete some extra activities to increase your skills and personal branding"
             press_any_key_to_continue("[q]uit", "q")
+
+            # COMPARISON ENEMY STRIKES AGAIN TO KNOCK THE PLAYER DOWN
+
+            # quit the game if player gave up
+            # give player EXP or not, depending on their answer
+            potential_EXP_increase = $player.player_compared_themselves(5, "second")
+            return false if potential_EXP_increase == false
+            $player.handle_player_comparing_themselves(potential_EXP_increase, 5)
+
+            # launch extra activities
             extra_EXP = extra_follow_up_extra_activities()
         end
 
