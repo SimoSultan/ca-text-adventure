@@ -6,9 +6,9 @@ echo "Welcome to Your Coding Journey"
 
 echo "Lets begin the install now"
 
-git clone "https://github.com/SimoSultan/coding-bootcamp-text-adventure"
+# git clone "https://github.com/SimoSultan/coding-bootcamp-text-adventure"
 
-cd coding-bootcamp-text-adventure/src
+# cd coding-bootcamp-text-adventure/src
 
 echo "Installing Bundler"
 
