@@ -116,7 +116,7 @@ Updated Challenges:
 
 
 ----
-### Midway Testing Status Update
+### Midway Final Testing Status Update
 
 For the most part, the design of my app didn't sway from original idea. There was the change in how Challenges worked, and how that Extra Activities just showed a countdown timer instead of giving the player an option to select what how to react to it (as I wanted to strongly suggest the time taken to do these tasks is time worth spent, rather than giving the player a cheat way to earn EXP). I mainly tested the game throughout the development to ensure the functions were working as intended. Enough time wasn't spent on developing the testing criteria initially, this was due because I felt the use of 'tty-prompt' would solve a lot of my User Input issues. It did, but a colleague raised my attention to an area where I could have tested to ensure the correct data was being sent between methods. I have taken this as a learning curve to focus more on it next time. That should reduce some debug time, however that should not detract away from the importance of testing throughout development. As the 'feel' of your app needs to be taken into account and sometimes that can only be seen when it's happening in front of us. 
 
