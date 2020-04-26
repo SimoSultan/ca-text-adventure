@@ -10,9 +10,9 @@ Source code: [https://github.com/SimoSultan/coding-bootcamp-text-adventure](http
 
 
 Files:
-- [Help](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/help.md)
-- [Development log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md)
-- [Software Development Plan](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/software-development-plan.md)
+- [Help](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/help.md)
+- [Development log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/development-log.md)
+- [Software Development Plan](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/software-development-plan.md)
 - [Flow Chart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/flow-chart-updated/entire-app-flow.jpg)
 
 ---
@@ -118,7 +118,7 @@ cd coding-bootcamp-text-adventure/src
 ![Trello Board Screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/implementation-plan-trello-board.png)
 
 
-[Development Log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md)
+[Development Log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/development-log.md)
 
 [Google Slide Presentation](https://docs.google.com/presentation/d/1skDW5dOQmxmbZVYYjgGwsOtw0axuxGczf0Pi4Acf4y8/edit#slide=id.g8422e20969_1_91)
 

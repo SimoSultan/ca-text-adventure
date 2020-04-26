@@ -79,7 +79,7 @@ Here are some very early, extremely rough concepts of how I wanted the game to l
 
 ### Control Flow Diagram
 
-I have included 2 flow charts, my original, and my updated one. The updated one is fairly different, the underlying concept of the game is still there, but changed due to a change in development. This major change in development happened when challenges were discovered to not be as fun and interactive as originally planned. This change condensed the flow and also added a significant enjoyment bonus. There are 2 folders in the docs showing the differences. Below are the 2 flow charts showing the changes. Details outlining the change in Challenges can be found in the [Development log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md).
+I have included 2 flow charts, my original, and my updated one. The updated one is fairly different, the underlying concept of the game is still there, but changed due to a change in development. This major change in development happened when challenges were discovered to not be as fun and interactive as originally planned. This change condensed the flow and also added a significant enjoyment bonus. There are 2 folders in the docs showing the differences. Below are the 2 flow charts showing the changes. Details outlining the change in Challenges can be found in the [Development log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/development-log.md).
 
 1. Original Flow chart:
 
@@ -108,7 +108,7 @@ Here is a link to my [Google Slide Presentation](https://docs.google.com/present
 ## Development Log
 
 
-- [Development log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md)
+- [Development log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/development-log.md)
 
 ### Major Milestone near Halfway
 When scrolling through the 'tty-prompt' Gem, I can't remember what I was looking at, but I managed to come up with the idea of how to make the much more interactive and fun to play. Initially the challenges were going to consist of a lot of wait (sleep) methods, which would resemble people learning and stumbling. However, the idea I came up with was to incorporate real coding questions into the challenges. The MCQ Kahoot questions in the bootcamp I attend heavily inspired the style.
