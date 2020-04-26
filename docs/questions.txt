@@ -5,6 +5,9 @@ c) Interpreter
 Answer - interpreter
 Hint: Ruby only produces the error when the piece of code is processed
 
+
+
+
 Who is the founder of Ruby?
 David Heinemeier Hansson
 Alexandra Ruby
@@ -19,6 +22,9 @@ How many types of variables are used in Ruby?
 3
 4
 5
+not included
+
+
 
 
 
@@ -44,8 +50,10 @@ hint - More than one are correct, but re-read the question to satisfy the soluti
 
 
 
-What is the difference between calling super and super()
 
+
+What is the difference between calling super and super()
+not included
 
 
 
@@ -54,7 +62,7 @@ What is the difference between calling super and super()
 
 
 Given the letters = {1:"a",2:"b", 3:"c"} How can I access the letter 'a'
-
+not included - but could develop a nested hash to ask
 
 
 
@@ -121,7 +129,7 @@ attr-writer
 attr_accessor
 attr_reader
 answer - attr_reader
-hint - 
+hint - The hyphenated word in the question is the important one
 
 
 

@@ -98,24 +98,27 @@ Updated Challenges:
 - 26/04/20 `17:10` - **Sourced questions to add into the game**
 - 26/04/20 `18:00` - **Added in sourced questions to game (copy/pasted over placeholders)**
 
-- 26/04/20 `` - **Added in an Command Line argument into the script - asks users name and inputs that**
-- 26/04/20 `` - **Finishing touches on Github README.md**
-- 26/04/20 `` - **Starting PowerPoint Presentation on Google Slides**
-- 26/04/20 `` - **Finished PowerPoint Presentation on Google Slides**
+- 26/04/20 `19:00` - **Starting PowerPoint Presentation on Google Slides**
+- 26/04/20 `20:30` - **Finished PowerPoint Presentation on Google Slides**
+- 26/04/20 `20:40` - **Finishing touches on development log**
+- 26/04/20 `20:45` - **Finishing touches on software development plan**
 
 
 > Monday 27th April 2020
 
 
 - 27/04/20 `` - **Developing menu for game**
-
+- 27/04/20 `` - **Added disclaimer to game**
+- 27/04/20 `` - **Reviewed markdown files to ensure they're pretty**
+- 27/04/20 `` - **Added in an Command Line argument into the script - asks users name and inputs that**
 
 
 
 
 ----
-### After Testing
+### Midway Testing Status Update
 
+For the most part, the design of my app didn't sway from original idea. There was the change in how Challenges worked, and how that Extra Activities just showed a countdown timer instead of giving the player an option to select what how to react to it (as I wanted to strongly suggest the time taken to do these tasks is time worth spent, rather than giving the player a cheat way to earn EXP). I mainly tested the game throughout the development to ensure the functions were working as intended. Enough time wasn't spent on developing the testing criteria initially, this was due because I felt the use of 'tty-prompt' would solve a lot of my User Input issues. It did, but a colleague raised my attention to an area where I could have tested to ensure the correct data was being sent between methods. I have taken this as a learning curve to focus more on it next time. That should reduce some debug time, however that should not detract away from the importance of testing throughout development. As the 'feel' of your app needs to be taken into account and sometimes that can only be seen when it's happening in front of us. 
 
 ----
 ### The End.

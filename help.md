@@ -25,11 +25,6 @@ git clone https://github.com/SimoSultan/coding-bootcamp-text-adventure.git
 cd coding-bootcamp-text-adventure/src
 ```
 
-6. If you trust the source of this file, then paste this to terminal. Y
-```
-chmod +x  ./run-terminal-app.sh
-```
-
 6. Now copy this to run the game:
 
 ```

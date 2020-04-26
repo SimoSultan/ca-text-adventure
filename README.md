@@ -15,28 +15,30 @@ Files:
 - [Software Development Plan](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/software-development-plan.md)
 - [Flow Chart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/updated-flow-chart/entire-app-flow.jpg)
 
-
+---
 
 **DISCLAIMER:**	  
 **This game does not represent any one coding bootcamp, it is just my interpretation.	
 And spoiler alert, but the goal of this game is to graduate and get a job. Completing the basic obstacles in this game does not resemble how to get a job in the real world** 
 
 
-
+---
 
 ## Description
 
 **Your Coding Journey** is a text based adventure game inspired by the journey of a person learning the world of development. As the game uses Ruby at its source, the challenges/questions that you face are based off this language. However, most questions should be able to be answered by most developers. At the end, the computer checks whether or not you have enough EXP to be able to apply for a job or offered one.
 
+---
 
 ## Motivation
 
 I had never developed a game myself which is why I chose to undertake my first one as a text based adventure game, which seemed appropriate for a terminal app as well. It was my first solid idea that I had come up. Disregarding the failed attempt at trying to use the Gosu Library with WSL as I wanted to make Space Invaders. (that will be a later project on my Mac). The main concept behind the game was resembled after an, more-or-less, any episode of the TV show Scrubs. As JD and the cast always faced a challenge in each episode, and beside all the laughs, there was a life lesson to be learnt. (I have to admit I didn't think of the Scrubs reference till after it was made, however it perfectly encapsulates my idea). The lesson to be learnt from the game stems from Growth Mindset. Helping others, not comparing yourself and persistence can help you achieve your goals. 
 
+---
 
 ## Features	
 
-### Current features:
+### Current features:  
 **spoiler alert**
 - player will face challenges involving 3 questions
 - player will get different amounts of EXP depending on how they complete the challenges
@@ -59,21 +61,21 @@ I had never developed a game myself which is why I chose to undertake my first o
 - have the ability for a player to start out at different levels (master, advanced, beginner and noob programmers), for initial release, everyone starts out at noob
 - have different levels of questions i.e. they will get harder as the game progresses, and also if the player chooses to start out at a higher level they will receive harder questions form the start
 
-
+---
 
 ## Gems used:
 
 Your Coding Journey utilizes these gems for the main flow of the app and for an enhanced user experience. 
-* [Bundler](https://bundler.io/) Used to handle all Gem installs. Also allowing the player to set up the necessary plugins to run the game. 
-* [TTY-Prompt](https://github.com/piotrmurach/tty-prompt) To enable the computer to easily navigate the console and delete lines.
-* [TTY-Spinner](https://github.com/piotrmurach/tty-spinner) Enables loading in the game to represent something happening in the background (checking the player's info)
-* [IO-Console](https://github.com/ruby/io-console) Used to retrieve the width of the window to display the logo in the centre and the appropriate amount of hyphens.
-* [Faker](https://github.com/faker-ruby/faker) Used to display Tweets, blogs, educator and students' names
-* [Colorize](https://github.com/fazibear/colorize) Enables the use of coloured outputs in the Terminal for better UX in UI
-* [Test-Unit](https://github.com/test-unit/test-unit) Was used to assist in Test Driven Development.
+* [Bundler](https://bundler.io/) - Used to handle all Gem installs. Also allowing the player to set up the necessary plugins to run the game. 
+* [TTY-Prompt](https://github.com/piotrmurach/tty-prompt) - To enable the computer to easily navigate the console and delete lines.
+* [TTY-Spinner](https://github.com/piotrmurach/tty-spinner) - Enables loading in the game to represent something happening in the background (checking the player's info)
+* [IO-Console](https://github.com/ruby/io-console) - Used to retrieve the width of the window to display the logo in the centre and the appropriate amount of hyphens.
+* [Faker](https://github.com/faker-ruby/faker) - Used to display Tweets, blogs, educator and students' names
+* [Colorize](https://github.com/fazibear/colorize) - Enables the use of coloured outputs in the Terminal for better UX in UI
+* [Test-Unit](https://github.com/test-unit/test-unit) - Was used to assist in Test Driven Development.
 
 
-
+---
 
 ## Installation Instructions
 
@@ -91,10 +93,6 @@ git clone https://github.com/SimoSultan/coding-bootcamp-text-adventure.git
 ```
 cd coding-bootcamp-text-adventure/src
 ```
-6. If you trust the source of this file, then paste this to terminal. Y
-```
-chmod +x  ./run-terminal-app.sh
-```
 6. Now copy this to run the game:
 ```
 ./run-terminal-app.sh
@@ -102,20 +100,25 @@ chmod +x  ./run-terminal-app.sh
 **Enjoy!**
 
 
-
+---
 
 ## Design and Implementation & Project Timeline
 
-- Flowchart:
+
+[Flow Chart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/updated-flow-chart/entire-app-flow.jpg):
+
 ![Your Coding Journey Flowchart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/updated-flow-chart/entire-app-flow.jpg)
 
-- [My Trello Board](https://trello.com/b/hdiSXwWJ/codingbootcamptextadventure)
+[My Trello Board](https://trello.com/b/hdiSXwWJ/codingbootcamptextadventure)
+
 ![Trello Board Screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/implementation-plan-trello-board.png)
 
-- [Development Log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md)
 
+[Development Log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md)
 
+[Google Slide Presentation](https://docs.google.com/presentation/d/1skDW5dOQmxmbZVYYjgGwsOtw0axuxGczf0Pi4Acf4y8/edit#slide=id.g8422e20969_1_91)
 
+---
 
 ## Resources
 
@@ -136,14 +139,14 @@ Your Coding Journey utilizes these gems for the main flow of the app and for an 
 
 
 
-
+---
 
 
 ## Copyright, ethical, social issues
 
 Copyright wasn't thought to be of concern as the game is free, open sourced and a text-based game. The only issue that was raised before development was that it can't associate with any particular branding qualities from a learning to code course. This made the game text more generic, departing from any issues surrounding this.
 
-
+---
 
 ## License
 **Copyright (c) 2020 Simon Curran** for [Coder Academy](https://coderacademy.edu.au).
@@ -153,6 +156,8 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 The software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.
+
+---
 
 ## Author
 Simon Curran

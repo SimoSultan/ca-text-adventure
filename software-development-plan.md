@@ -6,7 +6,7 @@
 Also, the goal of this game is to graduate and get a job. Completing the basic obstacles in this game does not entitle anyone to these**
 
 
-
+---
 
 ## Statement of Purpose
 
@@ -20,6 +20,7 @@ The audience for the game is mainly tailored towards a programmer. As the type o
 
 I had never developed a game myself which is why I chose to undertake my first one as a text adventure, which seemed appropriate for a terminal app as well. Putting enjoyment at the front of design (apart from UI) was a challenge I enjoyed. Also combining all the topics I had learnt so far into one coherent design, one helluva fun time.
 
+---
 
 ## Features
 
@@ -55,9 +56,7 @@ I had never developed a game myself which is why I chose to undertake my first o
 - player can choose to start out at different levels (Master, Advanced, Beginner and Noob) and they will receive difficult questions earlier
 - add in ability for player to see how many Tweets and Blogs they have written, even show their contents (as they are not stored)
 
-
-
-
+---
 
 ## USER INTERACTION (UI) and EXPERIENCE (UX)
 
@@ -69,12 +68,12 @@ Keeping the game simple with easy navigation, colouring of text for different ty
 Here are some very early, extremely rough concepts of how I wanted the game to look. Don't just my hand-drawing design skills please.
 
 
-![main-screen](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/UI-ideas/Main-UI.pdf)	
+![Main Screen](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/UI-ideas/Main-UI.pdf)	
 
-![challenge-screen](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/UI-ideas/Challenges_tweets-UI.pdf)	
+![Challenge Screen](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/UI-ideas/Challenges_tweets-UI.pdf)	
 
 
-
+---
 
 ## IMPLEMENTATION PLAN and PROJECT TIMELINE
 
@@ -82,13 +81,13 @@ Here are some very early, extremely rough concepts of how I wanted the game to l
 
 I have included 2 flow charts, my original, and my updated one. The updated one is fairly different, the underlying concept of the game is still there, but changed due to a change in development. This major change in development happened when challenges were discovered to not be as fun and interactive as originally planned. This change condensed the flow and also added a significant enjoyment bonus. There are 2 folders in the docs showing the differences. Below are the 2 flow charts showing the changes. Details outlining the change in Challenges can be found in the [Development log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md).
 
-1. Original entire app flow:
+1. Original Flow chart:
 
-![original-game-loop-flow-screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/implementation-plan-trello-board.png)
+![Original Flow Chart Screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/implementation-plan-trello-board.png)
 
-2. Updated entire app flow:
+2. Updated Flow Chart:
 
-![updated-entire-app-flow-screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/updated-flow-chart/entire-app-flow.jpg)
+![Updated Flow Chart Screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/updated-flow-chart/entire-app-flow.jpg)
 
 
 
@@ -96,15 +95,19 @@ I have included 2 flow charts, my original, and my updated one. The updated one 
 
 The project management application used to complete these tasks was Trello. This program allowed me to develop outlines for the majority of the application, including features, methods, timelines and so forth. Without this plan, implementing the application would have been significantly more difficult. Next project I intend to flush this out even more as now that I have used it once, understand how to better set up the project from the beginning. 
 
-Trello Board link below:
+
 - [Trello Board](https://trello.com/b/hdiSXwWJ/codingbootcamptextadventure)
 
 
+### Presentation
+
+Here is a link to my [Google Slide Presentation](https://docs.google.com/presentation/d/1skDW5dOQmxmbZVYYjgGwsOtw0axuxGczf0Pi4Acf4y8/edit#slide=id.g8422e20969_1_91) that I plan to present before I play my app. I just hope to give a quick run down of how my week went based off of these headings.
+
+---
+
+## Development Log
 
 
-### Development Log
-
-Entire Dev Log link below:
 - [Development log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md)
 
 ### Major Milestone near Halfway
@@ -120,32 +123,32 @@ Updated Challenges:
 ![updated-challenge-flow-screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/flow-chart-updated/challenge-flow.jpg)
 
 
-----
+
 ### Midway Testing Status Update
 
 For the most part, the design of my app didn't sway from original idea. There was the change in how Challenges worked, and how that Extra Activities just showed a countdown timer instead of giving the player an option to select what how to react to it (as I wanted to strongly suggest the time taken to do these tasks is time worth spent, rather than giving the player a cheat way to earn EXP). I mainly tested the game throughout the development to ensure the functions were working as intended. Enough time wasn't spent on developing the testing criteria initially, this was due because I felt the use of 'tty-prompt' would solve a lot of my User Input issues. It did, but a colleague raised my attention to an area where I could have tested to ensure the correct data was being sent between methods. I have taken this as a learning curve to focus more on it next time. That should reduce some debug time, however that should not detract away from the importance of testing throughout development. As the 'feel' of your app needs to be taken into account and sometimes that can only be seen when it's happening in front of us. 
 
-
+---
 
 ## Resources
 
 ### Gems used:
 
 Your Coding Journey utilizes these gems for the main flow of the app and for an enhanced user experience. 
-* [Bundler](https://bundler.io/) Used to handle all Gem installs. Also allowing the player to set up the necessary plugins to run the game. 
-* [TTY-Prompt](https://github.com/piotrmurach/tty-prompt) To enable the computer to easily navigate the console and delete lines.
-* [TTY-Spinner](https://github.com/piotrmurach/tty-spinner) Enables loading in the game to represent something happening in the background (checking the player's info)
+* [Bundler](https://bundler.io/) - Used to handle all Gem installs. Also allowing the player to set up the necessary plugins to run the game. 
+* [TTY-Prompt](https://github.com/piotrmurach/tty-prompt) - To enable the computer to easily navigate the console and delete lines.
+* [TTY-Spinner](https://github.com/piotrmurach/tty-spinner) - Enables loading in the game to represent something happening in the background (checking the player's info)
 * [IO-Console](https://github.com/ruby/io-console) Used to retrieve the width of the window to display the logo in the centre and the appropriate amount of hyphens.
-* [Faker](https://github.com/faker-ruby/faker) Used to display Tweets, blogs, educator and students' names
-* [Colorize](https://github.com/fazibear/colorize) Enables the use of coloured outputs in the Terminal for better UX in UI
-* [Test-Unit](https://github.com/test-unit/test-unit) Was used to assist in Test Driven Development.
+* [Faker](https://github.com/faker-ruby/faker) - Used to display Tweets, blogs, educator and students' names
+* [Colorize](https://github.com/fazibear/colorize) - Enables the use of coloured outputs in the Terminal for better UX in UI
+* [Test-Unit](https://github.com/test-unit/test-unit) - Was used to assist in Test Driven Development.
 
 ### ASCII Art Generator
 
 [patorjk.com](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
 
 
-
+---
 
 ## Author
 Simon Curran
@@ -163,9 +166,6 @@ Each test should:
 - provide at least TWO test cases and the expected results for each test case
 An outline of the testing procedure and cases should be included with the source code of the application and written in markdown.
 
-- An outline of the testing procedure and cases should be included with the source code of the application and written in markdown.
-
 - include command like arguments with your app / script
 
-T1A2-16	Present your terminal application to the class. You must provide a walk-through of the logic of your application and how the application is used. The time limit for your presentation is 5 minutes.
 
