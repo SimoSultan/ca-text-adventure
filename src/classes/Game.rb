@@ -16,7 +16,7 @@ class Game
     def initialize()
 
         @exp_level_for_job = 130
-        @exp_level_for_job_offer = 150
+        @exp_level_for_job_offer = 160
         @challenges_to_complete_before_graduating = 3
        
         @exp_levels = {

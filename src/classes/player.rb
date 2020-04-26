@@ -92,11 +92,10 @@ class Player
 
         prompt = TTY::Prompt.new
         display_header_mini()
+        puts "OH NO! Out of the blue came the Enemy..." + " Comparison".colorize(:light_red)
         if time == "first"
-            puts "OH NO! Out of the blue came the Enemy..." + " Comparison".colorize(:light_red)
             puts "You saw someone elses' work and doubted yourself and " + "lost #{exp_decrease} EXP".colorize(:light_red)
         else
-            puts "OH NO! Out of the blue came the Enemy..." + " Comparison".colorize(:light_red)
             puts "You doubted yourself again and " + "lost #{exp_decrease} EXP".colorize(:light_red)
         end
 
@@ -125,7 +124,6 @@ class Player
         elsif what_happened == "motivated"
             puts "We all experience this, but it's how we choose to act on these feelings. Pat yourself on the back #{@name}\nYou just earnt yourself " + "#{increase_EXP} EXP".colorize(:light_green)
             $player.increase_exp(increase_EXP, 0)
-            display_header_mini()
         end
         press_any_key()
     end

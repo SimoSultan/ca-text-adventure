@@ -61,7 +61,7 @@ module View
     # display the header that will sit at the top of the screen throughout the game
     def display_header_mini()
         system "clear"
-        puts  " " * (($terminal_width-13)/2) +                                  '    ___  '.colorize(:light_red) + '   __   '.colorize(:light_blue)
+        puts  " " * (($terminal_width-12)/2) +                                  '   ___  '.colorize(:light_red) + '   __   '.colorize(:light_blue)
         puts  " " * (($terminal_width-26)/2) + '/\_/\ '.colorize(:light_blue) + '   / __\ '.colorize(:light_red) + '   \ \  '.colorize(:light_blue)
         puts  " " * (($terminal_width-26)/2) + '\_ _/ '.colorize(:light_blue) + '  / /    '.colorize(:light_red) + '    \ \ '.colorize(:light_blue)
         puts  " " * (($terminal_width-26)/2) + ' / \ '.colorize(:light_blue) + '  / /___ '.colorize(:light_red) + '  /\_/ / '.colorize(:light_blue)

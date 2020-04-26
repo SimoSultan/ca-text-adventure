@@ -145,7 +145,7 @@ class Challenges
 
         # give them time to go and google a solution
         puts
-        puts "Ok go Google it to find your solution. We'll wait"
+        puts "Ok go Google it to find your solution. When you're ready..."
         press_any_key()
 
         system "clear"
