@@ -25,16 +25,13 @@ git clone https://github.com/SimoSultan/coding-bootcamp-text-adventure.git
 cd coding-bootcamp-text-adventure/src
 ```
 
-6. Now copy this to run the game:
+6. Now copy this into terminal to run the game:
 
 ```
 ./run-terminal-app.sh
 ```
 
-
-**Enjoy!**
-
-
+---
 
 ## How to Play
 
@@ -46,18 +43,17 @@ If an appropriate response is not received, the game will ask you again to submi
 
 You may need to use Google to find a solution to question. You can use any internet browser and navigate to [Google](https://www.google.com.au/). Include the word 'ruby' when you are searching to find appropriate answers to the questions provided.
 
-### To exit the game
+### To Exit the Game
 
 There are multiple ways to exit out the the game when you are playing. You can choose the option 'I Give Up', or type in 'quit' in the respective areas. Alteratively, you can finish the game you started and choose not to restart with 'n' when the option is provided.
 
 Also, you can hard exit the game by pressing 'Ctrl + c' on your keyboard. Alternatively, you can close your terminal instance with the red 'X' in the top left corner (if you're using a Mac) or the top right (if you're using Windows).
 
-
+---
 
 ## Features	
 
-### Current features:  
-**spoiler alert**
+### Current features:
 - player will face challenges involving 3 questions
 - player will get different amounts of EXP depending on how they complete the challenges
 - at multiple points throughout the game the player is offered opportunities to give up
