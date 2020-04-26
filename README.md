@@ -13,7 +13,7 @@ Files:
 - [Help](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/help.md)
 - [Development log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md)
 - [Software Development Plan](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/software-development-plan.md)
-- [Flow Chart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/updated-flow-chart/entire-app-flow.jpg)
+- [Flow Chart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/flow-chart-updated/entire-app-flow.jpg)
 
 ---
 
@@ -105,9 +105,9 @@ cd coding-bootcamp-text-adventure/src
 ## Design and Implementation & Project Timeline
 
 
-[Flow Chart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/updated-flow-chart/entire-app-flow.jpg):
+[Flow Chart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/flow-chart-updated/entire-app-flow.jpg):
 
-![Your Coding Journey Flowchart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/updated-flow-chart/entire-app-flow.jpg)
+![Your Coding Journey Flowchart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/flow-chart-updated/entire-app-flow.jpg)
 
 [My Trello Board](https://trello.com/b/hdiSXwWJ/codingbootcamptextadventure)
 
