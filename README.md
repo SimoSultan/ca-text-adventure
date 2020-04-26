@@ -99,6 +99,10 @@ cd coding-bootcamp-text-adventure/src
 ```
 **Enjoy!**
 
+---
+
+## Features
+
 
 ---
 
@@ -135,7 +139,9 @@ Your Coding Journey utilizes these gems for the main flow of the app and for an 
 
 ### ASCII Art Generator
 
-[patorjk.com](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+Utilised the following link for the Header ASCII art:
+
+[http://patorjk.com/](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
 
 
 
