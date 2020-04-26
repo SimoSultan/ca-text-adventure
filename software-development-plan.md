@@ -165,5 +165,7 @@ An outline of the testing procedure and cases should be included with the source
 
 - An outline of the testing procedure and cases should be included with the source code of the application and written in markdown.
 
+- include command like arguments with your app / script
+
 T1A2-16	Present your terminal application to the class. You must provide a walk-through of the logic of your application and how the application is used. The time limit for your presentation is 5 minutes.
 

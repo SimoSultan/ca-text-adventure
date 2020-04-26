@@ -92,11 +92,16 @@ Updated Challenges:
 
 - 26/04/20 `09:00` - **Finishing touches on Software Development Plan Md**
 - 26/04/20 `12:30` - **Converted Trello Dev Log to this Markdown file**
+- 26/04/20 `16:30` - **Created a script to run the game**
+- 26/04/20 `16:30` - **Updated Help Markdown file to include how to run the game from the script**
+- 26/04/20 `17:00` - **Finished Help Markdown file**
+- 26/04/20 `17:10` - **Sourced questions to add into the game**
+- 26/04/20 `18:00` - **Added in sourced questions to game (copy/pasted over placeholders)**
 
+- 26/04/20 `` - **Added in an Command Line argument into the script - asks users name and inputs that**
 - 26/04/20 `` - **Finishing touches on Github README.md**
 - 26/04/20 `` - **Starting PowerPoint Presentation on Google Slides**
 - 26/04/20 `` - **Finished PowerPoint Presentation on Google Slides**
-- 26/04/20 `` - **Added in sourced questions to game (copy/paste over placeholders)**
 
 
 > Monday 27th April 2020

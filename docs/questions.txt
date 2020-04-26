@@ -1,58 +1,128 @@
-9. It is must for Ruby to use a compiler.
-a) True
-b) False
-Answer: b
-Explanation: No compiler is required for ruby as it is an interpreted language
+1. Ruby uses a *what* to process the code you write.
+a) Translator
+b) Compiler
+c) Interpreter
+Answer - interpreter
+Hint: Ruby only produces the error when the piece of code is processed
 
-7. What will be the output of the following?
+Who is the founder of Ruby?
+David Heinemeier Hansson
+Alexandra Ruby
+Yukihiro Matsumoto
+answer - Yukihiro Matsumoto
+hint - He's not Danish
+
+
+
+
+How many types of variables are used in Ruby?
+3
+4
+5
+
+
+
+What will be the output of the following?
 "Ruby".reverse.upcase
 a) RUBY
 b) ybuR
 c) YBUR
-d) YBUr
-View Answer
-Answer: c
-Explanation: First the given string is reversed and then .upcase method is used to capitalize it.
-Output:
-"YBUR"
+Answer: YBUR
+hint - Carefully look at the method names
 
 
-What will the following output? (pick one of these or make a harder one)
-true    ? "true" : "false"
-false   ? "true" : "false"
-nil     ? "true" : "false"
-1       ? "true" : "false"
-0       ? "true" : "false"
-"false" ? "true" : "false"
 
 
-What does the method chars() do on a string?
 
 
-What is the shortest way to capitalize each string in an array of strings
-Array#map(&:capitalize) - answer
-Array#map(:&capitalize)
+What is the shortest way to capitalize each string in an array of strings?
+Array#map(&:capitalize)
 Array#each{|x|x.capitalize}
-Array#each{|x|x.capitalize!}
+Array#each(:&capitalize)
+answer - Array#map(&:capitalize)
+hint - More than one are correct, but re-read the question to satisfy the solution
 
-
-
-In Ruby, you can overwrite a to_s() method to print out what you want with puts.
-True
-False
-
-What is the difference between Array#map and Array#each in Ruby?
 
 
 What is the difference between calling super and super()
 
 
-4) State TRUE or FALSE. True expression part comes first after ? (question mark) symbol and before : (colon) symbol.
-A) FALSE
-B) TRUE
-C) -
-D) -
 
 
-How many types of variables are used in Ruby
-4
+
+
+
+
+Given the letters = {1:"a",2:"b", 3:"c"} How can I access the letter 'a'
+
+
+
+
+
+How can 3.times be used?
+to display the time
+to execute a block of code 3 times
+to muliply by 3
+
+
+
+
+For i in 1...10, how many times will this code repeat?
+9
+10
+11
+answer - 9
+hint - Is the range inclusive or exclusive?
+
+
+
+
+
+
+Given pet="bird". What does this return: 
+pet = "dog" ? "woof" : "chirp"
+Error
+woof
+chirp
+answer - error
+hint - check the statement that is being made carefully
+
+
+
+
+
+
+Given pet="bird" and animal = "jaguar". What does this return: 
+pet.chars[2] == "i" ? "chirp" : animal.chars.reverse[2] == "u" ? "meow" : "run away"
+run away
+chirp
+meow
+ans - meow
+hint - Take your time on this. Try it out in IRB if you get stuck
+
+
+
+
+
+
+How can I change the value of Fluffy's heads to be 3? Given hagrids_pet = {name: "Fluffy", heads: 2}
+hagrids_pet["heads"] = 3
+hagrids_pet[:heads] = 3
+hagrids_pet[heads:] = 3
+answer - hagrids_pet[:heads] = 3
+hint - is ag
+
+
+
+
+
+How can instance variables be made read-only outside a class?
+attr-writer
+attr_accessor
+attr_reader
+answer - attr_reader
+hint - 
+
+
+
+
