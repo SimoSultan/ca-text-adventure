@@ -57,6 +57,7 @@ I had never developed a game myself which is why I chose to undertake my first o
 - make some fake companies that they can apply for or receive a job offer from
 - have different difficulties of questions as they level up
 - player can choose to start out at different levels (Master, Advanced, Beginner and Noob) and they will receive difficult questions earlier
+- add in ability for player to see how many Tweets and Blogs they have written, even show their contents (as they are not stored)
 
 
 
@@ -72,9 +73,9 @@ Keeping the game simple with easy navigation, colouring of text for different ty
 Here are some very early, extremely rough concepts of how I wanted the game to look. Don't just my hand-drawing design skills please.
 
 
-![main-screen]()	
+![main-screen](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/UI-ideas/Main-UI.pdf)	
 
-![challenge-screen]()	
+![challenge-screen](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/UI-ideas/Challenges_tweets-UI.pdf)	
 
 
 
@@ -83,28 +84,17 @@ Here are some very early, extremely rough concepts of how I wanted the game to l
 
 ### Control Flow Diagram
 
-I have included 2 flow charts, my original, and my updated one. The updated one is fairly different, the underlying concept of the game is still there, but changed due to a change in development. This major change in development happened when challenges were discovered to not be as fun and interactive as originally planned. This change condensed the flow and also added a significant enjoyment bonus. There are 2 folders in the docs showing the differences. Below are 5 pictures:
+I have included 2 flow charts, my original, and my updated one. The updated one is fairly different, the underlying concept of the game is still there, but changed due to a change in development. This major change in development happened when challenges were discovered to not be as fun and interactive as originally planned. This change condensed the flow and also added a significant enjoyment bonus. There are 2 folders in the docs showing the differences. Below are the 2 flow charts showing the changes. Details outlining the change in Challenges can be found in the [Development log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md).
 
-1. Original game loop flow:
+1. Original entire app flow:
 
 ![original-game-loop-flow-screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/implementation-plan-trello-board.png)
 
-2. Original challenges flow:
-
-![original-challenges-flow-screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/implementation-plan-trello-board.png)
-
-3. Updated game loop flow:
-
-![updated-game-loop-flow-screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/updated-flow-chart/main-loop-flow.jpg)
-
-4. Updated challenge flow:
-
-![updated-challenge-flow-screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/updated-flow-chart/challenge-flow.jpg)
-
-
-5. Updated Entire App Flow:
+2. Updated entire app flow:
 
 ![updated-entire-app-flow-screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/updated-flow-chart/entire-app-flow.jpg)
+
+
 
 ### Trello Board 
 <!-- Develop an implementation plan which:
@@ -117,25 +107,41 @@ Your checklists for each feature should have at least 5 items. -->
 Trello Board link below:
 - [Trello Board](https://trello.com/b/hdiSXwWJ/codingbootcamptextadventure)
 
+### Gems used:
+
+Your Coding Journey utilizes these gems for the main flow of the app and for an enhanced user experience. 
+* [Bundler](https://bundler.io/) Used to handle all Gem installs. Also allowing the player to set up the necessary plugins to run the game. 
+* [TTY-Prompt](https://github.com/piotrmurach/tty-prompt) To enable the computer to easily navigate the console and delete lines.
+* [TTY-Spinner](https://github.com/piotrmurach/tty-spinner) Enables loading in the game to represent something happening in the background (checking the player's info)
+* [IO-Console](https://github.com/ruby/io-console) Used to retrieve the width of the window to display the logo in the centre and the appropriate amount of hyphens.
+* [Faker](https://github.com/faker-ruby/faker) Used to display Tweets, blogs, educator and students' names
+* [Colorize](https://github.com/fazibear/colorize) Enables the use of coloured outputs in the Terminal for better UX in UI
+* [Test-Unit](https://github.com/test-unit/test-unit) Was used to assist in Test Driven Development.
+
+
 
 ### Development Log
-<!-- Write TWO status updates on your application. You must write a status update when:
-- you significantly change a feature or your implementation plan at any point
-- encounter a significant issue, challenge or roadblock
-- are halfway through implementing the features
-- prior to / after testing the application
-You should submit these logs throughout the course of developing your application.
-Each status report should be between 100 - 200 words.
-The Development Log should be written in markdown and placed in a file named development-log.md in the root of your source control repository. Ensure you put the date of the log at the top of each log entry.
-Please send your log to your educator as a markdown file as you complete them. This is so we can provide you with feedback. -->
+
 Entire Dev Log link below:
 - [Development log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md)
 
-### Halfway Through Status Update
+### Major Milestone near Halfway
+When scrolling through the 'tty-prompt' Gem, I can't remember what I was looking at, but I managed to come up with the idea of how to make the much more interactive and fun to play. Initially the challenges were going to consist of a lot of wait (sleep) methods, which would resemble people learning and stumbling. However, the idea I came up with was to incorporate real coding questions into the challenges. The MCQ Kahoot questions in the bootcamp I attend heavily inspired the style.
+This would change a large chunk of my plan for Challenges, but it was worth undertaking as the game would be much more enjoyable. I still used the fundamentals of the original Challenges Flow Chart, but would alter it them, in turn making the flow more condensed as well. As can be seen in the 2 images provided.
+
+Original Challenges:
+
+![original-challenge-flow-screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/flow-chart-original/challenges-flow.jpg)
+
+Updated Challenges: 
+
+![updated-challenge-flow-screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/flow-chart-updated/challenge-flow.jpg)
+
+
 ----
-### After Testing Status Update
+### Midway Testing Status Update
 
-
+For the most part, the design of my app didn't sway from original idea. There was the change in how Challenges worked, and how that Extra Activities just showed a countdown timer instead of giving the player an option to select what how to react to it (as I wanted to strongly suggest the time taken to do these tasks is time worth spent, rather than giving the player a cheat way to earn EXP). I mainly tested the game throughout the development to ensure the functions were working as intended. Enough time wasn't spent on developing the testing criteria initially, this was due because I felt the use of 'tty-prompt' would solve a lot of my User Input issues. It did, but a colleague raised my attention to an area where I could have tested to ensure the correct data was being sent between methods. I have taken this as a learning curve to focus more on it next time. That should reduce some debug time, however that should not detract away from the importance of testing throughout development. As the 'feel' of your app needs to be taken into account and sometimes that can only be seen when it's happening in front of us. 
 
 
 

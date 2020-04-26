@@ -9,15 +9,6 @@ module Services
 
 
 
-	# setting a predefined amount of time to wait
-	# instead of writing sleep(2) everywhere and having to change it
-	def wait(time)
-		index = time
-		sleep_time = [(0.1), (0.4), (1.0), (1.5), (3.0)]
-		sleep(sleep_time[index])
-	end
-
-
 	# when the player wants to give up
 	# display a give up message, wait some time to let it sink in
 	# then end the game
@@ -25,7 +16,7 @@ module Services
         display_header_mini()
 		display_outro('give up')
 		display_outro('game over')
-		wait(2)
+		sleep(1.5)
 		return false
 	end
 
@@ -36,7 +27,7 @@ module Services
 	def game_over()
         display_header_mini()
 		display_outro('game over')
-		wait(2)
+		sleep(1.5)
 		return false
 	end
 

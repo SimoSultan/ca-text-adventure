@@ -24,20 +24,15 @@ And spoiler alert, but the goal of this game is to graduate and get a job. Compl
 
 
 
-
-
 ## Description
 
+**Your Coding Journey** is a text based adventure game inspired by the journey of a person learning the world of development. As the game uses Ruby at its source, the challenges/questions that you face are based off this language. However, most questions should be able to be answered by most developers. At the end, the computer checks whether or not you have enough EXP to be able to apply for a job or offered one.
 
 
+## Motivation
 
-## Statement of Purpose	
+I had never developed a game myself which is why I chose to undertake my first one as a text based adventure game, which seemed appropriate for a terminal app as well. It was my first solid idea that I had come up. Disregarding the failed attempt at trying to use the Gosu Library with WSL as I wanted to make Space Invaders. (that will be a later project on my Mac). The main concept behind the game was resembled after an, more-or-less, any episode of the TV show Scrubs. As JD and the cast always faced a challenge in each episode, and beside all the laughs, there was a life lesson to be learnt. (I have to admit I didn't think of the Scrubs reference till after it was made, however it perfectly encapsulates my idea). The lesson to be learnt from the game stems from Growth Mindset. Helping others, not comparing yourself and persistence can help you achieve your goals. 
 
-The goal was develop a game that resembles someone learning to code. The game will provide challenges, fun, laughs, but most importantly, reiterate the values of a Growth Mindset when learning. The game is inspired from, more-or-less, every episode of the TV show Scrubs. This show provided challenges to the main character and laughs along the way, but majority of episodes, there was always something the main character learnt, a life lesson for example, which is what I hoped to encapsulate. The life lesson I approached was to motivate the user into seeing the value of helping others. Not only do they get experience if they do, but gets to help another along the way.
-
-The audience for the game is tailored towards a programmer. As the type of questions that are presented to the user throughout the game are coding based, so for a non-programmer, these would be quite difficult, still possible, but a lot more time consuming. This game is also specifically tailored towards a programmer who is in the learning stages. We are all always learning, but a new programmer is someone who faces these types of challenges every day, and these users will receive the most enjoyment for the game.
-
-I had never developed a game myself which is why I chose to undertake my first one as a text adventure, which seemed appropriate for a terminal app as well. Putting enjoyment at the front of design (apart from UI) was a challenge I enjoyed.
 
 ## Features	
 
@@ -50,7 +45,7 @@ I had never developed a game myself which is why I chose to undertake my first o
 - once player reaches desired EXP, they graduate and look for a job (complete the game)
 - if they are not at the desired EXP, they are required to undertake extra activities before completion to level up
 
-### Possible features:
+### Future features:
 
 - the player can choose if they want to do more extra activities at the end of the game
 - add functionality to extra activities and so forth, rather than just a wait func
@@ -65,14 +60,17 @@ I had never developed a game myself which is why I chose to undertake my first o
 - have different levels of questions i.e. they will get harder as the game progresses, and also if the player chooses to start out at a higher level they will receive harder questions form the start
 
 
-## Code Structure
 
-### Gems used:
-- tty-prompt
-- colorize
-- faker
-- test-unit
-- io/console
+## Gems used:
+
+Your Coding Journey utilizes these gems for the main flow of the app and for an enhanced user experience. 
+* [Bundler](https://bundler.io/) Used to handle all Gem installs. Also allowing the player to set up the necessary plugins to run the game. 
+* [TTY-Prompt](https://github.com/piotrmurach/tty-prompt) To enable the computer to easily navigate the console and delete lines.
+* [TTY-Spinner](https://github.com/piotrmurach/tty-spinner) Enables loading in the game to represent something happening in the background (checking the player's info)
+* [IO-Console](https://github.com/ruby/io-console) Used to retrieve the width of the window to display the logo in the centre and the appropriate amount of hyphens.
+* [Faker](https://github.com/faker-ruby/faker) Used to display Tweets, blogs, educator and students' names
+* [Colorize](https://github.com/fazibear/colorize) Enables the use of coloured outputs in the Terminal for better UX in UI
+* [Test-Unit](https://github.com/test-unit/test-unit) Was used to assist in Test Driven Development.
 
 
 
@@ -102,32 +100,23 @@ I had never developed a game myself which is why I chose to undertake my first o
 
 
 
-## Design and Implementation
+
+## Design and Implementation & Project Timeline
+
+- Flowchart:
 ![Your Coding Journey Flowchart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/updated-flow-chart/entire-app-flow.jpg)
 
-
-
-
-
-## Project Timeline & Planning Progress
-A full record of the planning can be found here:
-- [Development Log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md)
 - [My Trello Board](https://trello.com/b/hdiSXwWJ/codingbootcamptextadventure)
-
-
 ![Trello Board Screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/implementation-plan-trello-board.png)
 
-
-
-
-
-## Testing
-![Testing Screenshot]()
+- [Development Log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md)
 
 
 
 
 ## Copyright, ethical, social issues
+
+Copyright wasn't thought to be of concern as the game is free, open sourced and a text-based game. The only issue that was raised before development was that it can't associate with any particular branding qualities from a learning to code course. This made the game text more generic, departing from any issues surrounding this.
 
 
 
