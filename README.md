@@ -74,29 +74,32 @@ Your Coding Journey utilizes these gems for the main flow of the app and for an 
 
 
 
-## Installation Instructions
-1. Follow these instructions to [download and install](https://www.ruby-lang.org/en/documentation/installation/) Ruby on your computer. 
 
+## Installation Instructions
+
+1. Follow these instructions to [download and install](https://www.ruby-lang.org/en/documentation/installation/) Ruby on your computer. 
+2. Download and unzip the project files onto your computer. 
+3. Now navigate to the folder you want to install the game in terminal by running:
 ```
-> install bundler
+cd ~/ *path to folder you want to install game at*
 ```
-4. Ask bundle to install the gems that we use for the program. 
+4. Clone the files from this repository by copying the following command line:
 ```
-> bundle install 
+git clone https://github.com/SimoSultan/coding-bootcamp-text-adventure.git
 ```
-5. In the terminal command line, navigate to the src folder by inputting the command 
-  ```
-  > cd (src - where you saved the files) 
-  ```
-6. Input the below command in the terminal command line.  
-  ```
-  > ruby main.rb
-  ```
-7. If you get an error message try updating your gems
-  ```
-  > gem update --system
-  ```
-8. Run program using step 6 again. 
+5. From here, navigate to the src folder of the cloned repository by copying:
+```
+cd coding-bootcamp-text-adventure/src
+```
+6. If you trust the source of this file, then paste this to terminal. Y
+```
+chmod +x  ./run-terminal-app.sh
+```
+6. Now copy this to run the game:
+```
+./run-terminal-app.sh
+```
+**Enjoy!**
 
 
 
@@ -110,6 +113,28 @@ Your Coding Journey utilizes these gems for the main flow of the app and for an 
 ![Trello Board Screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/implementation-plan-trello-board.png)
 
 - [Development Log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/development-log.md)
+
+
+
+
+## Resources
+
+### Gems used:
+
+Your Coding Journey utilizes these gems for the main flow of the app and for an enhanced user experience. 
+* [Bundler](https://bundler.io/) Used to handle all Gem installs. Also allowing the player to set up the necessary plugins to run the game. 
+* [TTY-Prompt](https://github.com/piotrmurach/tty-prompt) To enable the computer to easily navigate the console and delete lines.
+* [TTY-Spinner](https://github.com/piotrmurach/tty-spinner) Enables loading in the game to represent something happening in the background (checking the player's info)
+* [IO-Console](https://github.com/ruby/io-console) Used to retrieve the width of the window to display the logo in the centre and the appropriate amount of hyphens.
+* [Faker](https://github.com/faker-ruby/faker) Used to display Tweets, blogs, educator and students' names
+* [Colorize](https://github.com/fazibear/colorize) Enables the use of coloured outputs in the Terminal for better UX in UI
+* [Test-Unit](https://github.com/test-unit/test-unit) Was used to assist in Test Driven Development.
+
+### ASCII Art Generator
+
+[patorjk.com](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+
+
 
 
 
@@ -129,3 +154,5 @@ The above copyright notice and this permission notice shall be included in all c
 
 The software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. in no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.
 
+## Author
+Simon Curran

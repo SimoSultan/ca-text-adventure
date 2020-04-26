@@ -1,7 +1,6 @@
 ﻿# Coding Bootcamp Text Adventure
 
 
-first commit	
 ## **DISCLAIMER**
 **This game does not represent any one coding bootcamp. It is just an interpretation.
 Also, the goal of this game is to graduate and get a job. Completing the basic obstacles in this game does not entitle anyone to these**
@@ -20,8 +19,6 @@ The problem I hoped to solve with my choice of a text adventure game, apart from
 The audience for the game is mainly tailored towards a programmer. As the type of questions that are presented to the user throughout the game are coding based, so for a non-programmer, these would be quite difficult, still possible, but a lot more time consuming. This game is also specifically tailored towards a programmer who is in the learning stages. We are all always learning, but a new programmer is someone who faces these types of challenges every day, and these users will receive the most enjoyment for the game.
 
 I had never developed a game myself which is why I chose to undertake my first one as a text adventure, which seemed appropriate for a terminal app as well. Putting enjoyment at the front of design (apart from UI) was a challenge I enjoyed. Also combining all the topics I had learnt so far into one coherent design, one helluva fun time.
-<!-- word count 352 above, not including dot points -->
-
 
 
 ## Features
@@ -44,7 +41,6 @@ I had never developed a game myself which is why I chose to undertake my first o
 - if player manages to get enough EXP, they reach a secret level where they are offered a job at the end of the game (because they worked hard during the course of their journey)
 - there will be an enemy that can pop up multiple times in the game that reduces their EXP initially but they have the option to earn that EXP back and some, depending on how they react
 
-**ADDITIONAL FEATURES**  
 
  *Nice to Have Features / Planning to Implement*
 - Have EXP levels for each sub class of extra activities. They would contribute by having modifiers to the EXP that is earnt. e.g. Helping others would earn a different amount than racing through challenges. They would all be displayed in an RPG format when a player wants to see their characters level.
@@ -97,26 +93,12 @@ I have included 2 flow charts, my original, and my updated one. The updated one 
 
 
 ### Trello Board 
-<!-- Develop an implementation plan which:
-- outlines how each feature will be implemented and a checklist of tasks for each feature
-- prioritise the implementation of different features, or checklist items within a feature
-- provide a deadline, duration or other time indicator for each feature or checklist/checklist-item
-You must submit this as a written document, ideally in a tabular format, and it is suggested that you enter your checklists into an appropriate project management application to assist you in completing T1A2-10.
-Your checklists for each feature should have at least 5 items. -->
+
+The project management application used to complete these tasks was Trello. This program allowed me to develop outlines for the majority of the application, including features, methods, timelines and so forth. Without this plan, implementing the application would have been significantly more difficult. Next project I intend to flush this out even more as now that I have used it once, understand how to better set up the project from the beginning. 
 
 Trello Board link below:
 - [Trello Board](https://trello.com/b/hdiSXwWJ/codingbootcamptextadventure)
 
-### Gems used:
-
-Your Coding Journey utilizes these gems for the main flow of the app and for an enhanced user experience. 
-* [Bundler](https://bundler.io/) Used to handle all Gem installs. Also allowing the player to set up the necessary plugins to run the game. 
-* [TTY-Prompt](https://github.com/piotrmurach/tty-prompt) To enable the computer to easily navigate the console and delete lines.
-* [TTY-Spinner](https://github.com/piotrmurach/tty-spinner) Enables loading in the game to represent something happening in the background (checking the player's info)
-* [IO-Console](https://github.com/ruby/io-console) Used to retrieve the width of the window to display the logo in the centre and the appropriate amount of hyphens.
-* [Faker](https://github.com/faker-ruby/faker) Used to display Tweets, blogs, educator and students' names
-* [Colorize](https://github.com/fazibear/colorize) Enables the use of coloured outputs in the Terminal for better UX in UI
-* [Test-Unit](https://github.com/test-unit/test-unit) Was used to assist in Test Driven Development.
 
 
 
@@ -145,18 +127,34 @@ For the most part, the design of my app didn't sway from original idea. There wa
 
 
 
+## Resources
+
+### Gems used:
+
+Your Coding Journey utilizes these gems for the main flow of the app and for an enhanced user experience. 
+* [Bundler](https://bundler.io/) Used to handle all Gem installs. Also allowing the player to set up the necessary plugins to run the game. 
+* [TTY-Prompt](https://github.com/piotrmurach/tty-prompt) To enable the computer to easily navigate the console and delete lines.
+* [TTY-Spinner](https://github.com/piotrmurach/tty-spinner) Enables loading in the game to represent something happening in the background (checking the player's info)
+* [IO-Console](https://github.com/ruby/io-console) Used to retrieve the width of the window to display the logo in the centre and the appropriate amount of hyphens.
+* [Faker](https://github.com/faker-ruby/faker) Used to display Tweets, blogs, educator and students' names
+* [Colorize](https://github.com/fazibear/colorize) Enables the use of coloured outputs in the Terminal for better UX in UI
+* [Test-Unit](https://github.com/test-unit/test-unit) Was used to assist in Test Driven Development.
+
+### ASCII Art Generator
+
+[patorjk.com](http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20)
+
+
+
+
+## Author
+Simon Curran
+
+
+
+
 ## TIPS
 T1A2-8	Apply DRY (Don’t Repeat Yourself) coding principles to all code produced.
-T1A2-9	Apply all style and conventions for the programming language consistently to all code produced.
-T1A2-10	Creates an application which runs without error and has features that are consistent with the development plan.
-
-T1A2-11	Design a help file which includes a set of instructions which accurately describe how to use and install the application.
-You must include:
-- steps to install the application
-- any dependencies required by the application to operate
-- any system/hardware requirements
-- a written explanation of the different features of the application
-- The help file should be 100 - 200 words.
 
 T1A2-12	Design TWO tests which check that the application is running as expected.
 Each test should:
@@ -165,22 +163,7 @@ Each test should:
 - provide at least TWO test cases and the expected results for each test case
 An outline of the testing procedure and cases should be included with the source code of the application and written in markdown.
 
-T1A2-13	Utilise source control throughout the development of the application by:
-- making regular commits (at least 20 commits) with a commit message that summarises the changes
-- pushing all commits to a remote repository
-- You must submit a source control repository as a zip file to satisfy this requirement.
 - An outline of the testing procedure and cases should be included with the source code of the application and written in markdown.
 
-T1A2-14	Utilise a project management platform to track the development of the application by:
-- having features itemised and broken down into checklists
-- setting deadlines, duration or a time-frame for each feature or task
-- prioritising tasks
-- You must submit screenshots, or a valid export from a project management application to satisfy this requirement. If you are using a non-standard project management application, please discuss with your trainer whether they can access the file. If in doubt, screen capture your project management application and submit screen captures.
-
-T1A2-15	Utilise developer tools to automate the building and testing of the application by:
-- writing a script which runs the tests
-- writing a script which turns the application into an executable; OR
-- packaging the application for use as a module or dependency
-- You must submit a script file in with your source control repository to satisfy this requirement.
-
 T1A2-16	Present your terminal application to the class. You must provide a walk-through of the logic of your application and how the application is used. The time limit for your presentation is 5 minutes.
+
