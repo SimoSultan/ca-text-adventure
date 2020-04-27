@@ -15,13 +15,23 @@ include View, Services
 def main()
 
 
+    # returns a message to user to increase screen size if is too small
+    return if display_header_main() == false
+    # otherwise display the main header
+    display_header_main()
+
     # clear screen
     # create a new global game and player instance
     # ask user to increase screen size if too small (this is in get_player_info)
     system "clear"
     $game = Game.new()
     $player = Player.new()
-    return if $player.get_player_info() == false
+
+    # gets name from command line argument in script
+    # if name was empty, ask user for it, otherwise set it from ARGV
+    name = (ARGV.length > 0) && ARGV
+    !name ? $player.get_player_info() : $player.set_name_from_ARGV(name[0].capitalize)
+        
     play = true
 
 

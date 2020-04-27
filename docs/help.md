@@ -18,14 +18,19 @@ cd ~/ *path to folder you want to install game at*
 ```
 git clone https://github.com/SimoSultan/coding-bootcamp-text-adventure.git
 ```
+5. If you have Bundler installed already, skip this step, otherwise install Bundler with:
 
-5. From here, navigate to the src folder of the cloned repository by copying:
+```
+gem install bundler
+```
+
+6. From here, navigate to the src folder of the cloned repository by copying:
 
 ```
 cd coding-bootcamp-text-adventure/src
 ```
 
-6. Now copy this into terminal to run the game:
+7. Now copy this into terminal to run the game:
 
 ```
 ./run-terminal-app.sh

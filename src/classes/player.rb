@@ -18,12 +18,12 @@ class Player
 
 
 	def get_player_info()
-        # returns a message to use to increase screen size if is too small
-        return false if display_header_main() == false
+        # # returns a message to user to increase screen size if is too small
+        # return false if display_header_main() == false
 
         begin
             display_header_main()
-            puts "Before we start, what is your coder name?".colorize(:light_green)
+            puts "Before we start, we need your coder name?".colorize(:light_green)
             print "=> "; user_name = gets.strip.capitalize
             raise StandardError if user_name == ""
         rescue => exception
@@ -34,7 +34,7 @@ class Player
         end
 
         puts
-        puts "Hi! #{user_name}"
+        puts "Greetings fellow coder #{user_name}!"
 
         # if not happy with their name, restart function
         get_player_info() if press_any_key_to_continue("[r]etry", "r") == false
@@ -48,6 +48,15 @@ class Player
         # puts "Hi! #{user_name}. You would like to start out as experience level '#{$game.exp_levels.key(user_exp)}'"
         # @exp = user_exp
         # @level = $game.exp_levels.key(@exp)
+    end
+
+
+    def set_name_from_ARGV(name)
+        @name = name
+        @level = "Noob"
+
+        display_header_main()
+        puts "Greeting fellow coder #{@name}!"
     end
 
 
