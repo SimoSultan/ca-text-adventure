@@ -33,8 +33,9 @@ cd coding-bootcamp-text-adventure/src
 7. Now copy this into terminal to run the game:
 
 ```
-./run-terminal-app.sh
+./run-YCV-app.sh
 ```
+
 
 ---
 

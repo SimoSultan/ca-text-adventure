@@ -86,7 +86,7 @@ class Challenges
         question = @questions[question_symbol]
         ans = get_ans(question_symbol)
         user_resp = prompt.select(question["Question"]) do |q|
-            #  q.help 'Remember: You only get one shot!'
+             q.help ''
              q.choice question.keys[0], question.values[0]
              q.choice question.keys[1], question.values[1]
              q.choice question.keys[2], question.values[2]

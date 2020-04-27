@@ -28,15 +28,15 @@ class Game
 
         @follow_up_activities = {
             "Move on to next challenge" => 'next challenge',
-            "Write a Tweet" => lambda {Twitter.new()},
-            "Write a Medium blog" => lambda {Medium.new()},
-            "Make a YouTube video" => lambda {YouTube.new()},
-            "Do a HackerRank activity" => lambda {HackerRank.new()},
-            "Do a Codewars activity" => lambda {Codewars.new()},
+            "Write a Tweet (5s)" => lambda {Twitter.new()},
+            "Write a Medium blog (15s)" => lambda {Medium.new()},
+            "Make a YouTube video (20s)" => lambda {YouTube.new()},
+            "Do a HackerRank activity (7s)" => lambda {HackerRank.new()},
+            "Do a Codewars activity (7s)" => lambda {Codewars.new()},
             # "Do a Excercism challenge" => lambda {Excercism.new()},
-            "Do a RegexCrossword activity" => lambda {RegexCrossword.new()},
-            "Attend a Meetup" => lambda {Meetups.new()},
-            "Attend a Hackathon" => lambda {Hackathon.new()},
+            "Do a RegexCrossword activity (10s)" => lambda {RegexCrossword.new()},
+            "Attend a Meetup (30s)" => lambda {Meetups.new()},
+            "Attend a Hackathon (30s)" => lambda {Hackathon.new()},
             "Quit Game" => lambda {game_over()},
         }
 

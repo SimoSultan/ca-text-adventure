@@ -15,7 +15,11 @@ Files:
 - [Software Development Plan](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/software-development-plan.md)
 - [Flow Chart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/flow-chart-updated/entire-app-flow.jpg)
 
+
+
 ---
+
+
 
 **DISCLAIMER:**	  
 **This game does not represent any one coding bootcamp, it is just my interpretation.	
@@ -24,17 +28,27 @@ And spoiler alert, but the goal of this game is to graduate and get a job. Compl
 
 ---
 
+
+
 ## Description
 
 **Your Coding Journey** is a text based adventure game inspired by the journey of a person learning the world of development. As the game uses Ruby at its source, the challenges/questions that you face are based off this language. However, most questions should be able to be answered by most developers. At the end, the computer checks whether or not you have enough EXP to be able to apply for a job or offered one.
 
+
+
 ---
+
+
 
 ## Motivation
 
 I had never developed a game myself which is why I chose to undertake my first one as a text based adventure game, which seemed appropriate for a terminal app as well. It was my first solid idea that I had come up. Disregarding the failed attempt at trying to use the Gosu Library with WSL as I wanted to make Space Invaders. (that will be a later project on my Mac). The main concept behind the game was resembled after an, more-or-less, any episode of the TV show Scrubs. As JD and the cast always faced a challenge in each episode, and beside all the laughs, there was a life lesson to be learnt. (I have to admit I didn't think of the Scrubs reference till after it was made, however it perfectly encapsulates my idea). The lesson to be learnt from the game stems from Growth Mindset. Helping others, not comparing yourself and persistence can help you achieve your goals. 
 
+
+
 ---
+
+
 
 ## Features	
 
@@ -61,7 +75,11 @@ I had never developed a game myself which is why I chose to undertake my first o
 - have the ability for a player to start out at different levels (master, advanced, beginner and noob programmers), for initial release, everyone starts out at noob
 - have different levels of questions i.e. they will get harder as the game progresses, and also if the player chooses to start out at a higher level they will receive harder questions form the start
 
+
+
 ---
+
+
 
 ## Gems used:
 
@@ -75,7 +93,10 @@ Your Coding Journey utilizes these gems for the main flow of the app and for an 
 * [Test-Unit](https://github.com/test-unit/test-unit) - Was used to assist in Test Driven Development.
 
 
+
 ---
+
+
 
 ## Installation Instructions
 
@@ -89,22 +110,23 @@ cd ~/ *path to folder you want to install game at*
 ```
 git clone https://github.com/SimoSultan/coding-bootcamp-text-adventure.git
 ```
-5. From here, navigate to the src folder of the cloned repository by copying:
+5. If you have Bundler installed already, skip this step, otherwise install Bundler with:
+```
+gem install bundler
+```
+6. From here, navigate to the src folder of the cloned repository by copying:
 ```
 cd coding-bootcamp-text-adventure/src
 ```
-6. Now copy this to run the game:
+7. Now copy this into terminal to run the game:
 ```
-./run-terminal-app.sh
+./run-YCV-app.sh
 ```
-**Enjoy!**
+
 
 ---
 
-## Features
 
-
----
 
 ## Design and Implementation & Project Timeline
 
@@ -122,7 +144,12 @@ cd coding-bootcamp-text-adventure/src
 
 [Google Slide Presentation](https://docs.google.com/presentation/d/1skDW5dOQmxmbZVYYjgGwsOtw0axuxGczf0Pi4Acf4y8/edit#slide=id.g8422e20969_1_91)
 
+
+
+
 ---
+
+
 
 ## Resources
 
