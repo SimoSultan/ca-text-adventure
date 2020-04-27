@@ -66,7 +66,7 @@ class Challenges
 
         exp_from_helping = does_player_want_to_offer_help(challenge_no)
         if exp_from_helping == 'yes'
-            display_countdown_timer(20, ("Thank you for donating your time to help out others").colorize(:light_green), "Great work #{$player.name}. You just helped #{Faker::Name.name} complete the challenge as well", 10)
+            display_countdown_timer(10, ("Thank you for donating your time to help out others").colorize(:light_green), "Great work #{$player.name}. You just helped #{Faker::Name.name} complete the challenge as well", 10)
             @help_exp += 10
         end 
 
@@ -87,6 +87,7 @@ class Challenges
         ans = get_ans(question_symbol)
         user_resp = prompt.select(question["Question"]) do |q|
              q.help ''
+            #  q.cycle true
              q.choice question.keys[0], question.values[0]
              q.choice question.keys[1], question.values[1]
              q.choice question.keys[2], question.values[2]

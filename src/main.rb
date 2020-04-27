@@ -62,6 +62,7 @@ def main()
         total_chg1_exp_earnt = chg1.total_exp
         $player.increase_exp(total_chg1_exp_earnt, 1)
         display_header_mini()
+        $player.show_exp_increase(total_chg1_exp_earnt)
         follow_up1 = follow_up_extra_activities()
         display_header_mini()
         return false if follow_up1 == false
@@ -80,11 +81,12 @@ def main()
         total_chg2_exp_earnt = chg2.total_exp
         $player.increase_exp(total_chg2_exp_earnt, 1)
         display_header_mini()
+        $player.show_exp_increase(total_chg2_exp_earnt)
         follow_up2 = follow_up_extra_activities()
         if follow_up2 != 'next challenge'
             $player.increase_exp(follow_up2.exp_increase, 1)
             display_header_mini()
-            $player.show_player_level()
+            $player.show_exp_increase(follow_up2.exp_increase)
         end
 
 
@@ -107,9 +109,11 @@ def main()
         total_chg3_exp_earnt = chg3.total_exp
         $player.increase_exp(total_chg3_exp_earnt, 1)
         display_header_mini()
+        $player.show_exp_increase(total_chg3_exp_earnt)
         follow_up3 = follow_up_extra_activities()
         if follow_up3 != 'next challenge'
             $player.increase_exp(follow_up3.exp_increase, 1)
+            $player.show_exp_increase(follow_up3.exp_increase)
         end
 
 
@@ -131,7 +135,7 @@ def main()
         # check players EXP level, if less than or equal to the min, they need to do more challenges
         # or if they have not completed 3 challenges
          # add extra activities EXP to player if they complete any
-        if $player.exp <= $game.exp_level_for_job || $player.player_completed_challenges < $game.challenges_to_complete_before_graduating
+        if $player.exp <= $game.exp_level_for_job
             display_header_mini()
             puts "I'm sorry, but you need " + "#{$game.exp_level_for_job - $player.exp} more EXP".colorize(:light_yellow) + " to graduate"
             puts "We advise you to complete some extra activities to increase your skills and personal branding"
@@ -151,7 +155,7 @@ def main()
 
         # GAME FINISHED
         display_header_mini()
-        display_header_msg_under_mini("WELL DONE #{($player.name).upcase}!\nYou just completed ".colorize(:light_green) + "Your".colorize(:light_blue) + "Coding".colorize(:light_red) + "Journey".colorize(:light_blue))
+        display_header_msg_under_mini("WELL DONE #{($player.name).upcase}!\nYou just completed ".colorize(:light_green) + "Your ".colorize(:light_blue) + "Coding ".colorize(:light_red) + "Journey".colorize(:light_blue))
         puts " You have enough skills and/or your personal branding is strong.".
         press_any_key() # goes back to top of loop, game will check their EXP and ask if they want to play again or quit
 

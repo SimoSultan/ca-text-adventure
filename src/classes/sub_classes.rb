@@ -151,7 +151,7 @@ class Hackathons < PersonalBranding
 
     attr_accessor :exp_increase
 
-    def initialize(countdown = 30, header_msg = ("Here you only have to wait 30 seconds to get experience").colorize(:light_green), time_up_message = "hackathons", exp_increase = 20)
+    def initialize(countdown = 30, header_msg = ("Here you only have to wait 30 seconds to get experience, instead of 1 whole day").colorize(:light_green), time_up_message = "hackathons", exp_increase = 20)
         super
         @exp_increase = exp_increase
         @@hackathons += 1

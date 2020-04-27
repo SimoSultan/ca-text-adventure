@@ -13,6 +13,27 @@ class SubClassTest < Test::Unit::TestCase
         twitter = Twitter.new(1, 'test header', 'test time up', 7)
         assert_equal(7, twitter.exp_increase)
 
+        medium = Medium.new(1, 'test header', 'test time up', 7)
+        assert_equal(7, medium.exp_increase)
+
+        youtube = YouTube.new(1, 'test header', 'test time up', 7)
+        assert_equal(7, youtube.exp_increase)
+
+        hackerrank = HackerRank.new(1, 'test header', 'test time up', 7)
+        assert_equal(7, hackerrank.exp_increase)
+
+        code = Codewars.new(1, 'test header', 'test time up', 7)
+        assert_equal(7, code.exp_increase)
+
+        reg = RegexCrossword.new(1, 'test header', 'test time up', 7)
+        assert_equal(7, reg.exp_increase)
+
+        meet = Meetups.new(1, 'test header', 'test time up', 7)
+        assert_equal(7, meet.exp_increase)
+
+        hackathons = Hackathons.new(1, 'test header', 'test time up', 7)
+        assert_equal(7, hackathons.exp_increase)
+
     end
 
     # testing to see that the exp received from the creation of a sub class increases the players experience level

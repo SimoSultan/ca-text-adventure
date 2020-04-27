@@ -43,11 +43,11 @@
 When scrolling through the 'tty-prompt' Gem, I can't remember what I was looking at, but I managed to come up with the idea of how to make the much more interactive and fun to play. Initially the challenges were going to consist of a lot of wait (sleep) methods, which would resemble people learning and stumbling. However, the idea I came up with was to incorporate real coding questions into the challenges. The MCQ Kahoot questions in the bootcamp I attend heavily inspired the style.
 This would change a large chunk of my plan for Challenges, but it was worth undertaking as the game would be much more enjoyable. I still used the fundamentals of the original Challenges Flow Chart, but would alter it them, in turn making the flow more condensed as well. As can be seen in the 2 images provided.
 
-Original Challenges:
+**Original Challenges:**
 
 ![original-challenge-flow-screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/flow-chart-original/challenges-flow.jpg)
 
-Updated Challenges: 
+**Updated Challenges:** 
 
 ![updated-challenge-flow-screenshot](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/flow-chart-updated/challenge-flow.jpg)
 
@@ -107,10 +107,11 @@ Updated Challenges:
 > Monday 27th April 2020
 
 
-- 27/04/20 `` - **Developing menu for game**
-- 27/04/20 `` - **Added disclaimer to game**
-- 27/04/20 `` - **Reviewed markdown files to ensure they're pretty**
-- 27/04/20 `` - **Added in an Command Line argument into the script - asks users name and inputs that**
+- 27/04/20 `10:00` - **Reviewed markdown files to ensure they're pretty**
+- 27/04/20 `12:00` - **Added command line argument to get players name in script to pass into game**
+- 27/04/20 `14:00` - **Added manual testing list to SDP**
+- 27/04/20 `16:00` - **Finalising all docs**
+- 27/04/20 `18:30` - **Quick last test before submission**
 
 
 

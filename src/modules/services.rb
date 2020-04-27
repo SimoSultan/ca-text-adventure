@@ -53,9 +53,20 @@ module Services
 
 		while continue
 			catch_up_EXP = follow_up_extra_activities()
-			($player.increase_exp(catch_up_EXP.exp_increase, 1)) if catch_up_EXP != 'next challenge'
 			display_header_mini()
-			$player.show_player_level()
+			if catch_up_EXP != 'next challenge'
+				$player.increase_exp(catch_up_EXP.exp_increase, 1)
+				$player.show_exp_increase(catch_up_EXP.exp_increase)
+			end
+
+			if $player.exp <= $game.exp_level_for_job
+				puts "Keep going, nearly there, just " + "#{$game.exp_level_for_job - $player.exp} more EXP".colorize(:light_yellow) + " left"
+			elsif $player.exp >= $game.exp_level_for_job_offer
+				puts "Fantastic persistance #{$player.name}! You have reached the secret EXP level. Finish up to see your reward."
+			elsif $player.exp >= $game.exp_level_for_job
+				puts "Well done #{$player.name}! You have enough EXP to finish up. Or if you continue, there is a secret EXP you can reach."
+			end
+
 			return if press_any_key_to_continue("[f]inish levelling up", "f") == false
 		end
 	end
@@ -88,18 +99,21 @@ module Services
 			puts
 			puts "Do you want to play again? y/n".colorize(:light_cyan)
 			print "=> "; play_again = STDIN.gets.strip.downcase[0]
-            raise StandardError if play_again == "" || play_again != "y" || play_again != "n"
-        rescue => exception
-            puts
-            puts "Not a valid input sorry\nPlease try again".colorize(:light_red)
-            press_any_key()
-            retry
-        end
+			puts play_again
+			if play_again == ""
+				raise StandardError
+			end
+		rescue => exception
+			puts
+			puts "Not a valid input sorry\nPlease try again".colorize(:light_red)
+			press_any_key()
+			retry
+		end
 
 		# player wants to play again
 		return true if play_again == "y"
 		# otherwise player does NOT want to play again
-		return false
+		return false if play_again != "y"
 	end
 
 
@@ -113,7 +127,7 @@ module Services
         user_resp = prompt.select("Now, would you like to help out some colleagues who are stuck?") do |menu|
             menu.help " "
             menu.choice "Yes, happy to", 'yes'
-            menu.choice "I'd rather move on thankyou", 'no'
+            menu.choice "I'd rather move on, thankyou", 'no'
 	   end
 	   return user_resp
     end

@@ -63,12 +63,11 @@ class Player
     end
 
 
-    def show_playerS_level()
+    def show_player_level()
         # shows player their experience level on the main screen
-        
         puts
         puts "#{@name}, your current EXP = #{@exp}"
-        puts "You've also completed #{@player_completed_challenges} challenge/s so far"
+        puts "You've also completed #{@player_completed_challenges} challenge/s"
     end
 
 
@@ -78,6 +77,7 @@ class Player
         puts
         puts "#{@name}, you just earnt #{exp_increase} EXP on that last challenge"
         puts "And you've completed a total of #{@player_completed_challenges} challenge/s so far"
+        press_any_key()
     end
 
 

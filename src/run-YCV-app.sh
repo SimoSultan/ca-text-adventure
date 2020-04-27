@@ -11,8 +11,8 @@ echo ""
 # echo "Installing Bundler"
 # gem install bundler
 
-# echo "Ensuring all required gems are installed"
-# bundle install
+echo "Ensuring all required gems are installed"
+bundle install
 
 echo ""
 echo "All gems have been installed"

@@ -36,7 +36,7 @@ class Game
             # "Do a Excercism challenge" => lambda {Excercism.new()},
             "Do a RegexCrossword activity (10s)" => lambda {RegexCrossword.new()},
             "Attend a Meetup (30s)" => lambda {Meetups.new()},
-            "Attend a Hackathon (30s)" => lambda {Hackathon.new()},
+            "Attend a Hackathon (30s)" => lambda {Hackathons.new()},
             "Quit Game" => lambda {game_over()},
         }
 
@@ -194,8 +194,8 @@ class Game
                 "Answer" => "YBUR",
             },
             q5: {
-                "Array#map(&:capitalize)" => "Array#map(&:capitalize)",
                 "Array#each{|x|x.capitalize}" => "Array#each{|x|x.capitalize}",
+                "Array#map(&:capitalize)" => "Array#map(&:capitalize)",
                 "Array#each(:&capitalize)" => "Array#each(:&capitalize)",
                 "Ask for help" => "ask",
                 "Don't know. Move on" => "dont",
@@ -227,9 +227,9 @@ class Game
                 "Answer" => "meow",
             },
             q8: {
-                "hagrids_pet[:heads] = 3" => "hagrids_pet[:heads] = 3",
                 'hagrids_pet["heads"] = 3' => 'hagrids_pet["heads"] = 3',
                 "hagrids_pet[heads:] = 3" => "hagrids_pet[heads:] = 3",
+                "hagrids_pet[:heads] = 3" => "hagrids_pet[:heads] = 3",
                 "Ask for help" => "ask",
                 "Don't know. Move on" => "dont",
                 "I give up" => "give",
