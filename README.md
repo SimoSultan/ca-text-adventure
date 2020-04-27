@@ -14,6 +14,7 @@ Files:
 - [Development log](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/development-log.md)
 - [Software Development Plan](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/software-development-plan.md)
 - [Flow Chart](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/docs/flow-chart-updated/entire-app-flow.jpg)
+- [Trello Board](https://trello.com/b/hdiSXwWJ/codingbootcamptextadventure)
 
 
 
@@ -53,7 +54,6 @@ I had never developed a game myself which is why I chose to undertake my first o
 ## Features	
 
 ### Current features:  
-**spoiler alert**
 - player will face challenges involving 3 questions
 - player will get different amounts of EXP depending on how they complete the challenges
 - at multiple points throughout the game the player is offered opportunities to give up

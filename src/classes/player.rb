@@ -8,6 +8,7 @@ require 'colorize'
 class Player
 
     attr_accessor :name, :exp, :level
+    attr_reader :player_completed_challenges
 
     def initialize()
         @name = ""
@@ -24,7 +25,7 @@ class Player
         begin
             display_header_main()
             puts "Before we start, we need your coder name?".colorize(:light_green)
-            print "=> "; user_name = gets.strip.capitalize
+            print "=> "; user_name = STDIN.gets.strip.capitalize
             raise StandardError if user_name == ""
         rescue => exception
             puts
@@ -56,11 +57,13 @@ class Player
         @level = "Noob"
 
         display_header_main()
-        puts "Greeting fellow coder #{@name}!"
+        puts "Greetings fellow coder #{@name}!"
+
+        press_any_key()
     end
 
 
-    def show_player_level()
+    def show_playerS_level()
         # shows player their experience level on the main screen
         
         puts

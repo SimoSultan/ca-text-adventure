@@ -222,8 +222,7 @@ class Game
                 "Ask for help" => "ask",
                 "Don't know. Move on" => "dont",
                 "I give up" => "give",
-                "Question" => 'Given pet="bird" and animal = "jaguar". What does this return: 
-                pet.chars[2] == "i" ? "chirp" : animal.chars.reverse[2] == "u" ? "meow" : "run away"',
+                "Question" => 'Given pet="bird" and animal = "jaguar". What does this return? pet.chars[2] == "i" ? "chirp" : animal.chars.reverse[2] == "u" ? "meow" : "run away"',
                 "Hint" => "Take your time on this. Try it out in IRB if you get stuck",
                 "Answer" => "meow",
             },

@@ -14,11 +14,8 @@ include View, Services
 
 def main()
 
-
     # returns a message to user to increase screen size if is too small
     return if display_header_main() == false
-    # otherwise display the main header
-    display_header_main()
 
     # clear screen
     # create a new global game and player instance
@@ -31,10 +28,9 @@ def main()
     # if name was empty, ask user for it, otherwise set it from ARGV
     name = (ARGV.length > 0) && ARGV
     !name ? $player.get_player_info() : $player.set_name_from_ARGV(name[0].capitalize)
-        
+    
+    
     play = true
-
-
     while play
         # refresh the pool of questions needs
         # check if player has enough EXP to finish the game or if they need to practice more
@@ -53,9 +49,8 @@ def main()
         # displays header again to show updated EXP level in header
         # ask if they want to play an extra activity before starting next challenge
         # if player chooses not to do an extra activity, wont earn extra EXP
-        # if they has completed an extra activity, there will be an exp gain
-        # also add 1 is the amount of extra activities they completed to their total challenge count on $player
-        # check if user wants to continue game
+        # if player completed an extra activity, there will be an exp gain, seen in follow_up1.exp_increase
+        # also adding 1 is the amount of extra activities they completed to their total challenge count on $player
 
 
 
@@ -69,12 +64,12 @@ def main()
         display_header_mini()
         follow_up1 = follow_up_extra_activities()
         display_header_mini()
+        return false if follow_up1 == false
         if follow_up1 != 'next challenge'
             $player.increase_exp(follow_up1.exp_increase, 1)
             display_header_mini()
             $player.show_exp_increase(follow_up1.exp_increase)
         end
-        # return false if press_any_key_to_continue("[q]uit", "q") == false
 
 
         ## STAGE 2 ## 

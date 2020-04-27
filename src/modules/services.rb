@@ -66,7 +66,7 @@ module Services
 	def press_any_key_to_continue(word, confirm)
 		puts
 		puts "Press any key to continue... or #{word}".colorize(:light_cyan)
-		resp = gets.strip.downcase[0]
+		resp = STDIN.gets.strip.downcase[0]
 		return false if resp == confirm
 	end
 
@@ -76,7 +76,7 @@ module Services
 		puts
 		puts
 		puts "Press any key to continue...".colorize(:light_cyan)
-		gets 
+		STDIN.gets
 	end
 
 
@@ -87,7 +87,7 @@ module Services
 		begin
 			puts
 			puts "Do you want to play again? y/n".colorize(:light_cyan)
-			print "=> "; play_again = gets.strip.downcase[0]
+			print "=> "; play_again = STDIN.gets.strip.downcase[0]
             raise StandardError if play_again == "" || play_again != "y" || play_again != "n"
         rescue => exception
             puts

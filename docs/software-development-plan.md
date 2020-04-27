@@ -75,7 +75,7 @@ Here are some very early, extremely rough concepts of how I wanted the game to l
 
 ---
 
-## IMPLEMENTATION PLAN and PROJECT TIMELINE
+## IMPLEMENTATION PLAN
 
 ### Control Flow Diagram
 
@@ -130,6 +130,43 @@ For the most part, the design of my app didn't sway from original idea. There wa
 
 ---
 
+## **Testing**
+
+When creating this game, I used a majority of manual testing during development. Tests that I conducted in different sections of the app are included below. I also used [test-unit](https://github.com/test-unit/test-unit) to create a few tests to check the creation of a sub class instance, and then the EXP that is earnt from creating that instance is then appropriately applied to the player's EXP level. These tests can be seen in this file. [testing.rb](https://github.com/SimoSultan/coding-bootcamp-text-adventure/blob/master/src/classes/testing.rb)
+
+| Feature                                                                         | What it does                                                                                  | Expected Outcome                                                                               | Actual Outcome                                                                  | Fix                                                                                                                  | Remaining Issues |
+|---------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|------------------|
+| **EXTRA ACTIVITIES**                                                            |                                                                                               |                                                                                                |                                                                                 |                                                                                                                      |                  |
+| List of Extra Activities                                                        | A hash of extra activities that will be passed into the tty-prompt gem to display to the user | For it to display all 11 options to the user                                                   | Only displayed 6 but could scroll through them all, want whole list to display  | There was a per page attribute to the gem that allowed all questions to display                                      | Nil              |
+| Twitter Extra Activity                                                          | Resembles time taken to write a tweet                                                         | To display message and display the countdown timer                                             | Message flashed only flashed on screen and countdown timer startsed immediately |                                                                                                                      | Nil              |
+| Countdown timer displaying correctly                                            | Displays a countdown timer                                                                    | To show a countdown and a message at the end                                                   | Worked as expected                                                              |                                                                                                                      | Nil              |
+| Pass information from Twitter sub class to countdown timer in grandparent class | Pass a custom message to display in the countdown timer when it reaches time up               | Display a message                                                                              | Worked as expected                                                              |                                                                                                                      | Nil              |
+| Count how many tweets, personal brandings and extra activities user has done    | Will allow the player to know how many extra activities they have completed                   | For all the classes to count correctly when the Twitter class is triggered                     | Worked as expected                                                              |                                                                                                                      | Nil              |
+| Getting the Extra activities to fire with a lamda in main function              | When the player reaches this section the function works correctly                             | For it to go into the twitter subclass function                                                | Worked as expected                                                              |                                                                                                                      | Nil              |
+| Quit game in Activity                                                           | For the user to quit the game from this section                                               | For the game to end                                                                            | Worked as expected                                                              |                                                                                                                      | Nil              |
+|                                                                                 |                                                                                               |                                                                                                |                                                                                 |                                                                                                                      |                  |
+| **CHALLENGES**                                                                  |                                                                                               |                                                                                                |                                                                                 |                                                                                                                      |                  |
+| Displays the questions to user in challenges                                    | Displays the questions to user with the prompt                                                | Display the list                                                                               | It displayed the answers in the prompt as well which obviously can't be a thing | I can force which elements in the list to display, meaning I could hide the answer correctly                         | Nil              |
+| 3 questions in a challenge                                                      | Display 3 different questions on each loop in the challenge class                             | To display a different question each loop                                                      | Didn't display                                                                  | The variable that was being passed in was incorrect, ended up going with passing symbol in the question              | Nil              |
+| Have 3 challenges in game                                                       | Goes through all 3 chgs planned for the game                                                  | To go through the list of 3 questions 3 times                                                  | Worked as expected                                                              |                                                                                                                      | Nil              |
+| Quit game in Challenge                                                          | For the user to quit the game from this section                                               | For the game to end                                                                            | Worked as expected                                                              |                                                                                                                      | Nil              |
+| User selects don't know in question                                             | Displays a message with answer and moves to next question                                     | Displays a message with answer and moves to next question                                      | Worked as expected                                                              |                                                                                                                      | Nil              |
+| Get a random key value from a hash                                              | Selects a random key value from a hash of questions                                           | Selects a random key value from a hash of questions                                            | Worked as expected                                                              |                                                                                                                      | Nil              |
+| Have 9 questions in the game                                                    | Have a different question for loop for each challenge in the game                             | To display a different question each time                                                      | Worked as expected                                                              |                                                                                                                      | Nil              |
+|                                                                                 |                                                                                               |                                                                                                |                                                                                 |                                                                                                                      |                  |
+| **UI**                                                                          |                                                                                               |                                                                                                |                                                                                 |                                                                                                                      |                  |
+| Headers on app                                                                  | Displays the man logo to the player for UI                                                    | Expected to sit in the middle of terminal with appropriate colouring                           | Colours worked, sits just off middle, small adjustments made                    |                                                                                                                      | Nil              |
+|                                                                                 |                                                                                               |                                                                                                |                                                                                 |                                                                                                                      |                  |
+| **USER VALIDATION**                                                             |                                                                                               |                                                                                                |                                                                                 |                                                                                                                      |                  |
+| User inputting their name                                                       | To not accept an empty string                                                                 | For the header and question to be displayed each time, also with an error message if incorrect | Messaged flashed and screen was just asking for the name again                  | Added the press any key method in there (which includes a gets) to stop the retry method from firing instantaneously | Nil              |
+| User inputting their response to restart the game                               | To not accept an empty string                                                                 | For the header and question to be displayed each time, also with an error message if incorrect | The questions displays again and again                                          |                                                                                                                      | Not yet fixed    |
+
+
+
+------
+
+
+
 ## Resources
 
 ### Gems used:
@@ -155,19 +192,5 @@ Utilised the following link for the Header ASCII art:
 ## Author
 Simon Curran
 
-
-
-
-## TIPS
-T1A2-8	Apply DRY (Don’t Repeat Yourself) coding principles to all code produced.
-
-T1A2-12	Design TWO tests which check that the application is running as expected.
-Each test should:
-- cover a different feature of the application
-- state what is being tested
-- provide at least TWO test cases and the expected results for each test case
-An outline of the testing procedure and cases should be included with the source code of the application and written in markdown.
-
-- include command like arguments with your app / script
 
 

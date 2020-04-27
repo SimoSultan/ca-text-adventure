@@ -8,12 +8,16 @@ class Twitter < PersonalBranding
     @@tweets = 0
     @@twitter_exp_earned = 0
 
-    attr_accessor :exp_increase
+    # attr_accessor :exp_increase
 
     def initialize(countdown = 5, header_msg = ("Generating your interesting Tweet takes some time").colorize(:light_green), time_up_message = "twitter", exp_increase = 5)
         super
         @exp_increase = exp_increase
         @@tweets += 1
+    end
+
+    def exp_increase()
+        @exp_increase
     end
 
     def self.display_total_tweets()
