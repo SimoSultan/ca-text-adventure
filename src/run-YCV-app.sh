@@ -11,13 +11,14 @@ echo ""
 # echo "Installing Bundler"
 # gem install bundler
 
+
 echo "Ensuring all required gems are installed"
 bundle install
 
 echo ""
 echo "All gems have been installed"
 echo ""
-echo "----------------------------------------"
+echo "-----------------------------------------"
 echo ""
 
 echo "Before we start, what's your Coder Name going to be for the game?"
